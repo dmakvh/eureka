@@ -16,9 +16,19 @@ Getting started
 
 Static properties
 
-
-
+netflix.discovery.client.refresh.interval=30
+netflix.discovery.appinfo.replicate.interval=30
+netflix.discovery.dnsPollIntervalMs=300000
+netflix.discovery.discoveryServer.gzipContent=true
+netflix.discovery.discoveryServer.readTimeout=8000
+netflix.discovery.discoveryServer.connectTimeout=5000
+netflix.discovery.backupregistry=
 
 Dynamic Properties
 
+netflix.discovery.shouldUseDns=false
+netflix.discovery.registration.enabled=true
+netflix.discovery.preferSameZone=true
+netflix.discovery.printDeltaFullDiff=false
+netflix.discovery.disableDelta=false
 
