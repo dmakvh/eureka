@@ -8,10 +8,15 @@ Discovery client Responsibilities
 
 Getting started
 
-1) Identity where eureka properties are
-2)
+1) Identity where eureka properties are or Set them as System properties
+2) Identify application by setting properties
+3) DiscoveryManager.initComponent();
+4) DiscoveryManager.getDiscoveryClient().getInstancebyVipAddress
+
 
 Static properties
+
+
 
 
 Dynamic Properties
