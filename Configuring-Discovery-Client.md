@@ -36,3 +36,11 @@ netflix.discovery.preferSameZone=true
 netflix.discovery.printDeltaFullDiff=false
 netflix.discovery.disableDelta=false
 
+Details
+
+1) Explain DNS based discovery server identification - talk about adv
+2) Explain gzip content - talk about network experience
+3) Talk about payload - json and using your own provider
+4) Talk about 30 second cleanup
+
+Troubleshooting
