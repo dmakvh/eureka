@@ -10,8 +10,12 @@ Getting started
 
 1) Identity where eureka properties are or Set them as System properties
 2) Identify application by setting properties
-3) DiscoveryManager.initComponent();
-4) DiscoveryManager.getDiscoveryClient().getInstancebyVipAddress
+3) Set up disovery properties
+         1) Mandatory - serviceurl, dns set up
+         2) Other setups
+          
+4) DiscoveryManager.initComponent();
+5) DiscoveryManager.getDiscoveryClient().getInstancebyVipAddress
 
 
 Static properties
