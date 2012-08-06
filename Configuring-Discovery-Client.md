@@ -10,7 +10,7 @@ Getting started
 
 1) Identity where eureka properties are or Set them as System properties
 2) Identify application by setting properties
-3) Set up disovery properties
+3) Set up discovery properties
          1) Mandatory - serviceurl, dns set up
          2) Other setups
           
@@ -42,5 +42,7 @@ Details
 2) Explain gzip content - talk about network experience
 3) Talk about payload - json and using your own provider
 4) Talk about 30 second cleanup
+5) Discovery healthcheck callback
 
 Troubleshooting
+1) Servo metrics
