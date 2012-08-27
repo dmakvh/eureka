@@ -7,7 +7,7 @@ The Application Service will first have to register with Eureka Server to be dis
 
 Once registered with Eureka Server, the Eureka Client by default pulls this registration information every 30 seconds (configurable) to its local cache and can find information about the service or make calls to the remote service.
 
-Hence, the setups involve setting up the following
+The setups involve the following
 
 * Eureka Server
 * Eureka Client for the client
@@ -31,12 +31,12 @@ Eureka can be run in both the AWS and the non-AWS environments.A good place to s
 * Git version 1.7.11.3 or higher
 * Gradle 1.0-milestone-9 or higher
 
-Here is a step by step instruction of the setups.
+Here is a step by step instruction of the setups for running the Sample Eureka Server, Application Client and Application Service
 
-1) Install the latest git (todo:link) and gradle (todo:link) packages.
-2) Get the Eureka build source from github
-
-git remote add --track eureka build git@github.com:Netflix/gradle-template.git
+* Install the latest git (todo:link) and gradle (todo:link) packages.
+* Get the Eureka build source from github
+`
+`git remote add --track eureka build git@github.com:Netflix/gradle-template.git
 git fetch build
 git merge build/eureka
 
