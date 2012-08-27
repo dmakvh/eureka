@@ -1,7 +1,7 @@
 Eureka comes with two components - **Eureka Client** and the **Eureka Server**. Your architecture which is using Eureka will typically have two applications
 
-* Application Client which using Eureka to make requests to the Application Service.
-* Application Service which receives requests from Application Client and sends a response back.
+* **Application Client** which using Eureka to make requests to the Application Service.
+* **Application Service** which receives requests from Application Client and sends a response back.
 
 The Application Service will first have to register with Eureka Server to be discovered by Application Client. Registering Application Client with Discovery is optional, but registration happens anyway by default. Both the client and the service uses Eureka Client (java based) to register with Eureka Server.If you are using a non-java based application you need to use REST(todo:attach link) endpoints to register with Eureka.
 
@@ -9,27 +9,27 @@ Once registered with Eureka Server, the Eureka Client by default pulls this regi
 
 Hence, the setups involve setting up the following
 
-1) Eureka Server
-2) Eureka Client for the client
-3) Eureka Client for the service
+* Eureka Server
+* Eureka Client for the client
+* Eureka Client for the service
 
-PreRequisites
+Eureka can be run in both the AWS and the non-AWS environments.A good place to start for the setups, is the built in sample application that comes with Eureka which demonstrates all of the 3 setups explained above. Please run this to familiarize yourself with the setups before you can do advanced (todo :url) setups with eureka clusters within and outside of AWS.
 
-Eureka Server
+## PreRequisites
 
-1) JDK 1.6 or higher 
-2) Tomcat 6.0.10 or higher
+# Eureka Server
 
-Eureka Client
+* JDK 1.6 or higher 
+* Tomcat 6.0.10 or higher
 
-1) JDK 1.6 or higher
+# Eureka Client
 
-Build
+* JDK 1.6 or higher
 
-1) git version 1.7.11.3 or higher
-2) Gradle 1.0-milestone-9 or higher
+# Eureka Build
 
-A good place to start for the setups is the built in sample application that comes with Eureka which demonstrates all of the 3 setups explained above. Please run this to familiarize yourself with the setups before you can do advanced (todo :url) setups with eureka clusters and in the cloud.
+* Git version 1.7.11.3 or higher
+* Gradle 1.0-milestone-9 or higher
 
 Here is a step by step instruction of the setups.
 
