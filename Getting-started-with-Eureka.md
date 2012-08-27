@@ -51,10 +51,18 @@ git pull
 
      2) eureka-server.properties - This is for configuration server specific properties. There are also the -test and -prod.properties which you do not need editing for the sample server
 
-   
+For more details of additional configuration options for Eureka client and Eureka Server, please refer <url here>
 
+5) Navigate to eureka-server/conf/sampleclient and edit the following files to configure the sample eureka client
+     
+     1) sample-eureka-client.properties
+     
+6) Navigate to eureka-server/conf/sampleservice and edit the following files to configure the sample eureka service
+     
+     1) sample-eureka-service.properties
 
-
+7) If you are running the client and service on different hosts, you should pull the eureka source on both the hosts and configure the steps (5) and (6) on these different hosts.
+     
 ./gradlew -I gradle/netflix-oss.gradle clean build
 
 
