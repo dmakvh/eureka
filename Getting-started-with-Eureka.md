@@ -35,49 +35,49 @@ Here is a step by step instruction of the setups for running the Sample Eureka S
 
 * Install the latest git (todo:link) and gradle (todo:link) packages.
 * Get the Eureka build source from github
-`
-`git remote add --track eureka build git@github.com:Netflix/gradle-template.git
-git fetch build
-git merge build/eureka
 
-3) Get the Eureka source from github
+    git remote add --track eureka build git@github.com:Netflix/gradle-template.git
+    git fetch build
+    git merge build/eureka
 
-git remote add --track eureka git@github.com:Netflix/eureka.git
-git pull
+*  Get the Eureka source from github
 
-4) Navigate to eureka-server/conf/ and edit the following files to configure the server
+    git remote add --track eureka git@github.com:Netflix/eureka.git
+    git pull
+
+* Navigate to eureka-server/conf/ and edit the following files to configure the server
      
-     1) eureka-client.properties -This is for configuring the Eureka Client which lives in Eureka Server as well.You should also edit the -test and -prod variations (these files are picked up based on the system property pass into the server -Deureka.environment)
+     1)eureka-client.properties -This is for configuring the Eureka Client which lives in Eureka Server as well.You should also edit the -test and -prod variations (these files are picked up based on the system property pass into the server -Deureka.environment)
 
      2) eureka-server.properties - This is for configuration server specific properties. There are also the -test and -prod.properties which you do not need editing for the sample server
 
 For more details of additional configuration options for Eureka client and Eureka Server, please refer <url here>
 
-5) Navigate to eureka-server/conf/sampleclient and edit the following files to configure the sample eureka client
+* Navigate to eureka-server/conf/sampleclient and edit the following files to configure the sample eureka client
      
-     1) sample-eureka-client.properties
+       sample-eureka-client.properties
      
-6) Navigate to eureka-server/conf/sampleservice and edit the following files to configure the sample eureka service
+* Navigate to eureka-server/conf/sampleservice and edit the following files to configure the sample eureka service
      
-     1) sample-eureka-service.properties
+      sample-eureka-service.properties
 
-7) If you are running the client and service on different hosts, you should pull the eureka source on both the hosts and configure the steps (5) and (6) on these different hosts.
+* If you are running the client and service on different hosts, you should pull the eureka source on both the hosts and configure the steps (5) and (6) on these different hosts.
 
-8) Now, build the Eureka Server by executing the following
+* Now, build the Eureka Server by executing the following
 
 ./gradlew -I gradle/netflix-oss.gradle clean build
 
 This generates a WAR(web application archive) artifact - ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war
 
-9) This WAR contains all the server configurations you changed. Copy this to the your tomcat deployment directory under $TOMCAT_HOME/webapps/ 
+* This WAR contains all the server configurations you changed. Copy this to the your tomcat deployment directory under $TOMCAT_HOME/webapps/ 
 
 cp ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war
 
-10) Start your tomcat server. Access http://localhost:<port>/eureka to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there
+* Start your tomcat server. Access http://localhost:<port>/eureka to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there
 
-11) The build automatically sets up the client and the service with the necessary dependencies. Start the service by calling eureka-server/runservice.sh. Wait for the server message that says 'Service started and ready to process requests..'. If you do not see that, there is something wrong with your setups. Check your configurations to make sure you have set up the port and vipAddress correctly.
+* The build automatically sets up the client and the service with the necessary dependencies. Start the service by calling eureka-server/runservice.sh. Wait for the server message that says 'Service started and ready to process requests..'. If you do not see that, there is something wrong with your setups. Check your configurations to make sure you have set up the port and vipAddress correctly.
 
-12) Now run the eureka-server/runclient.sh. The client should now be able to communicate to the server on the configured port. The service should exit after processing the message and sending a response back to the client.
+* Now run the eureka-server/runclient.sh. The client should now be able to communicate to the server on the configured port. The service should exit after processing the message and sending a response back to the client.
 
 Eureka! You are all setup and should be ready to jump to advanced configuration of eureka in the cloud.
 
