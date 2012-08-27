@@ -1,7 +1,7 @@
-Eureka comes with two components - Eureka Client and the Eureka Server. Your architecture which is using Eureka will typically have two applications
+Eureka comes with two components - **Eureka Client** and the **Eureka Server**. Your architecture which is using Eureka will typically have two applications
 
-1) Application Client which using Eureka to make requests to the Application Service.
-2) Application Service which receives requests from Application Client and sends a response back.
+* Application Client which using Eureka to make requests to the Application Service.
+* Application Service which receives requests from Application Client and sends a response back.
 
 The Application Service will first have to register with Eureka Server to be discovered by Application Client. Registering Application Client with Discovery is optional, but registration happens anyway by default. Both the client and the service uses Eureka Client (java based) to register with Eureka Server.If you are using a non-java based application you need to use REST(todo:attach link) endpoints to register with Eureka.
 
