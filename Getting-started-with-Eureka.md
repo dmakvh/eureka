@@ -15,18 +15,18 @@ Hence, the setups involve setting up the following
 
 Eureka can be run in both the AWS and the non-AWS environments.A good place to start for the setups, is the built in sample application that comes with Eureka which demonstrates all of the 3 setups explained above. Please run this to familiarize yourself with the setups before you can do advanced (todo :url) setups with eureka clusters within and outside of AWS.
 
-## PreRequisites
+# PreRequisites
 
-# Eureka Server
+## Eureka Server
 
 * JDK 1.6 or higher 
 * Tomcat 6.0.10 or higher
 
-# Eureka Client
+## Eureka Client
 
 * JDK 1.6 or higher
 
-# Eureka Build
+## Eureka Build
 
 * Git version 1.7.11.3 or higher
 * Gradle 1.0-milestone-9 or higher
