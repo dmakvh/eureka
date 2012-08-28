@@ -99,4 +99,6 @@ Here is a step by step instruction of the setups for building and running the Sa
 
 * Now run the **eureka-server/runclient.sh**. The client should now be able to communicate to the server on the configured port. The service should exit after processing the message and sending a response back to the client.
 
+* Make sure you browse the sample code to understand how the service and the client registers with Eureka and also how the client can find the service and make remote calls.
+
 **Eureka!**You are all setup and should be ready to jump to advanced configuration of eureka in the cloud.
