@@ -42,8 +42,8 @@ Here is a step by step instruction of the setups for running the Sample Eureka S
 
 *  Get the Eureka source from github
 
-    git remote add --track eureka git@github.com:Netflix/eureka.git
-    git pull
+    ``git remote add --track eureka git@github.com:Netflix/eureka.git
+    git pull``
 
 * Navigate to eureka-server/conf/ and edit the following files to configure the server
      
