@@ -90,7 +90,7 @@ This generates a WAR(web application archive) artifact - _**./eureka-server/buil
 
 <pre><code>
 cp ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war
-<pre><code> 
+</pre></code> 
 
 * Start your tomcat server. Access _**http://localhost:<port>/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
 
