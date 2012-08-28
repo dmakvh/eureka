@@ -98,4 +98,4 @@ This generates a WAR(web application archive) artifact - _**./eureka-server/buil
 
 * Now run the **eureka-server/runclient.sh**. The client should now be able to communicate to the server on the configured port. The service should exit after processing the message and sending a response back to the client.
 
-_**Eureka!**_You are all setup and should be ready to jump to advanced configuration of eureka in the cloud.
+**Eureka!**.You are all setup and should be ready to jump to advanced configuration of eureka in the cloud.
