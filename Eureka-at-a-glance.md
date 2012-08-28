@@ -14,5 +14,5 @@ AWS ELB is also a traditional proxy-based load balancing solution whereas with E
 
 ## How different is Eureka from the Route 53?
 
-Route 53 is a naming service which Eureka can provide the same for the mid-tier servers and the similarity stops there. 
+Route 53 is a naming service which Eureka can provide the same for the mid-tier servers and the similarity stops there. Route 53 is a DNS service which can host your DNS records even for non-AWS data centers. Route 53 can also do latency based routing across AWS regions. Eureka is analogous to internal DNS and has nothing to do with the DNS servers across the world. Eureka is also region-isolated in the sense that it does hold data from other AWS regions. It's primary purpose of holding information is load balancing within a region.
 
