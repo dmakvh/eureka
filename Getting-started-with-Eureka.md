@@ -69,7 +69,7 @@ Here is a step by step instruction of the setups for building and running the Sa
     Application Name (eureka.name)
     Application Port (eureka.port)
     Virtual HostName (eureka.vipAddress)
-    Eureka Service Urls
+    Eureka Service Urls (eureka.serviceUrls)
    </pre></code> 
 
 * Navigate to _eureka-server/conf/sampleclient_ and edit the _**sample-eureka-client.properties **_ to configure the sample eureka client so that it can register and find information from Eureka Server.
