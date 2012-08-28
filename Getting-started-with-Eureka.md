@@ -44,29 +44,27 @@ Here is a step by step instruction of the setups for building and running the Sa
 
 *  Get the Eureka source from github
 
-    ``git remote add --track eureka git@github.com:Netflix/eureka.git
-    git pull``
+    <pre><code> git remote add --track eureka git@github.com:Netflix/eureka.git
+    git pull<pre><code> 
 
 * Navigate to eureka-server/conf/ and edit the following files to configure the eureka server. Eureka server also needs its own Eureka Client configuration as with any other application.
      
-     ``eureka-client.properties
+    <pre><code> eureka-client.properties
      eureka-client-test.properties
      eureka-server.properties 
-     eureka-server-test.properties``
+     eureka-server-test.properties<pre><code> 
   
   The Eureka configuration searches the client related property files in eureka-client.properties in the _classpath_. It also searches for the environment specific properties for different environments like _test_ and _prod_. The search location can be changed by passing in the system properties (Do not pass in the prefix)
    
-      ``-Deureka.client.props
-      -Deureka.server.props``
+      <pre><code> -Deureka.client.props
+      -Deureka.server.props<pre><code> 
 
 The properties in the files explain what they are for. At the minimum the following things need to be configured
 
-``Application Name (eureka.name)
+<pre><code> Application Name (eureka.name)
 Application Port (eureka.port)
 Virtual HostName (eureka.vipAddress)
-Eureka Service Urls``
-
-For more details of additional configuration options for Eureka client and Eureka Server, please refer <url here>
+Eureka Service Urls<pre><code> 
 
 * Navigate to eureka-server/conf/sampleclient and edit the following files to configure the sample eureka client so that it can register and find information from Eureka Server.
      
@@ -76,21 +74,21 @@ For more details of additional configuration options for Eureka client and Eurek
 
 * Now, build the Eureka Server by executing the following
 
-``./gradlew -I gradle/netflix-oss.gradle clean build``
+<pre><code> ./gradlew -I gradle/netflix-oss.gradle clean build<pre><code> 
 
-This generates a WAR(web application archive) artifact - ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war
+This generates a WAR(web application archive) artifact - _./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war_
 
-* This WAR contains all the server configurations you changed. Copy this to the your tomcat deployment directory under $TOMCAT_HOME/webapps/ 
+* This WAR contains all the server configurations you changed. Copy this to the your tomcat deployment directory under _$TOMCAT_HOME/webapps/ _
 
-``cp ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war``
+<pre><code> cp ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war<pre><code> 
 
-* Start your tomcat server. Access **http://localhost:<port>/eureka** to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
+* Start your tomcat server. Access _**http://localhost:<port>/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
 
 * The build automatically sets up the client and the service with the necessary dependencies. Start the service by calling **eureka-server/runservice.sh**. Wait for the server message that says ``'Service started and ready to process requests..'``. If you do not see that, there is something wrong with your setups. Check your configurations to make sure you have set up the port and vipAddress correctly.
 
 * Now run the **eureka-server/runclient.sh**. The client should now be able to communicate to the server on the configured port. The service should exit after processing the message and sending a response back to the client.
 
-Eureka! You are all setup and should be ready to jump to advanced configuration of eureka in the cloud.
+**Eureka! **You are all setup and should be ready to jump to advanced configuration of eureka in the cloud.
 
 
 
