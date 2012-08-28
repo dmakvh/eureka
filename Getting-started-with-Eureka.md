@@ -38,49 +38,59 @@ Here is a step by step instruction of the setups for building and running the Sa
 * Install the latest git (todo:link) and gradle (todo:link) packages.
 * Get the Eureka build source from github
 
-   <pre><code> git remote add --track eureka build git@github.com:Netflix/gradle-template.git  
-      git fetch build  
-      git merge build/eureka<pre><code>
+<pre><code> 
+git remote add --track eureka build git@github.com:Netflix/gradle-template.git  
+git fetch build  
+git merge build/eureka
+</pre></code>
 
 *  Get the Eureka source from github
-
-    <pre><code> git remote add --track eureka git@github.com:Netflix/eureka.git
-    git pull<pre><code> 
+<pre><code> 
+git remote add --track eureka git@github.com:Netflix/eureka.git
+git pull
+</pre></code> 
 
 * Navigate to eureka-server/conf/ and edit the following files to configure the eureka server. Eureka server also needs its own Eureka Client configuration as with any other application.
-     
-    <pre><code> eureka-client.properties
-     eureka-client-test.properties
-     eureka-server.properties 
-     eureka-server-test.properties<pre><code> 
+<pre><code> 
+eureka-client.properties
+eureka-client-test.properties
+eureka-server.properties 
+eureka-server-test.properties
+</pre></code> 
   
   The Eureka configuration searches the client related property files in eureka-client.properties in the _classpath_. It also searches for the environment specific properties for different environments like _test_ and _prod_. The search location can be changed by passing in the system properties (Do not pass in the prefix)
-   
-      <pre><code> -Deureka.client.props
-      -Deureka.server.props<pre><code> 
+<pre><code> 
+-Deureka.client.props
+-Deureka.server.props
+</pre></code> 
 
 The properties in the files explain what they are for. At the minimum the following things need to be configured
-
-<pre><code> Application Name (eureka.name)
+<pre><code> 
+Application Name (eureka.name)
 Application Port (eureka.port)
 Virtual HostName (eureka.vipAddress)
-Eureka Service Urls<pre><code> 
+Eureka Service Urls
+</pre></code> 
 
-* Navigate to eureka-server/conf/sampleclient and edit the following files to configure the sample eureka client so that it can register and find information from Eureka Server.
+* Navigate to _eureka-server/conf/sampleclient _and edit the following files to configure the sample eureka client so that it can register and find information from Eureka Server.
      
-* Navigate to eureka-server/conf/sampleservice and edit the following files to configure the sample eureka service so that it can register with Eureka Server and can be found by other clients.
+* Navigate to _eureka-server/conf/sampleservice_ and edit the following files to configure the sample eureka service so that it can register with Eureka Server and can be found by other clients.
     
 * If you are running the client and service on different hosts, you should pull the eureka source on both the hosts and configure sample client and sample service on different hosts.
 
 * Now, build the Eureka Server by executing the following
 
-<pre><code> ./gradlew -I gradle/netflix-oss.gradle clean build<pre><code> 
+<pre><code> 
+./gradlew -I gradle/netflix-oss.gradle clean build
+</pre></code> 
 
-This generates a WAR(web application archive) artifact - _./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war_
+This generates a WAR(web application archive) artifact - _**./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war**_
 
 * This WAR contains all the server configurations you changed. Copy this to the your tomcat deployment directory under _$TOMCAT_HOME/webapps/ _
 
-<pre><code> cp ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war<pre><code> 
+<pre><code>
+cp ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war
+<pre><code> 
 
 * Start your tomcat server. Access _**http://localhost:<port>/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
 
