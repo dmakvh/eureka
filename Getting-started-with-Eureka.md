@@ -3,7 +3,7 @@ Eureka comes with two components - **Eureka Client** and the **Eureka Server**. 
 * **Application Client** which using Eureka to make requests to the Application Service.
 * **Application Service** which receives requests from Application Client and sends a response back.
 
-The Application Service will first have to register with Eureka Server to be discovered by Application Client. Registering Application Client with Discovery is optional, but registration happens anyway by default. Both the client and the service uses Eureka Client (java based) to register with Eureka Server.If you are using a non-java based application you need to use REST(todo:attach link) endpoints to register with Eureka.
+The Application Service will first have to register with Eureka Server to be discovered by Application Client. Registering Application Client with Eureka is optional, but registration happens anyway by default. Both the client and the service uses Eureka Client (java based) to register with Eureka Server.If you are using a non-java based application you need to use REST(todo:attach link) endpoints to register with Eureka.
 
 Once registered with Eureka Server, the Eureka Client by default pulls this registration information every 30 seconds (configurable) to its local cache and can find information about the service or make calls to the remote service.
 
@@ -35,14 +35,7 @@ A good place to start for the setups, is the built in sample application that co
 
 Here is a step by step instruction of the setups for building and running the Sample Eureka Server, Application Client and Application Service
 
-* Install the latest git (todo:link) and gradle (todo:link) packages.
-* Get the Eureka build source from github
-
-   <pre><code> 
-    git remote add --track eureka build git@github.com:Netflix/gradle-template.git  
-    git fetch build  
-    git merge build/eureka
-   </pre></code>
+* Install the latest [git](http://git-scm.com/book/en/Getting-Started-Installing-Git) and [gradle](http://gradle.org/installation) packages.
 
 *  Get the Eureka source from github
    <pre><code> 
@@ -59,7 +52,7 @@ Here is a step by step instruction of the setups for building and running the Sa
     </pre></code> 
   
   The Eureka configuration searches the client related property files in eureka-client.properties in the    
-   _classpath_. It also searches for the environment specific properties for different environments like   
+   _classpath_. It also searches for the environment specific properties specified by <pre><code>-Deureka.environment</pre></code> for different environments like   
   _test_ and _prod_. 
 
    The search location can be changed by passing in the system properties (Do not pass in      
@@ -79,9 +72,9 @@ Here is a step by step instruction of the setups for building and running the Sa
     Eureka Service Urls
    </pre></code> 
 
-* Navigate to _eureka-server/conf/sampleclient _and edit the following files to configure the sample eureka client so that it can register and find information from Eureka Server.
+* Navigate to _eureka-server/conf/sampleclient_ and edit the _**sample-eureka-client.properties **_ to configure the sample eureka client so that it can register and find information from Eureka Server.
      
-* Navigate to _eureka-server/conf/sampleservice_ and edit the following files to configure the sample eureka service so that it can register with Eureka Server and can be found by other clients.
+* Navigate to _eureka-server/conf/sampleservice_ and edit the _**sample-eureka-service.properties **_ to configure the sample eureka service so that it can register with Eureka Server and can be found by other clients.
     
 * If you are running the client and service on different hosts, you should pull the eureka source on both the hosts and configure sample client and sample service on different hosts.
 
