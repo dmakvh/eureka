@@ -1,4 +1,3 @@
-
-* [Eureka at a glance]]
+* [[Eureka at a glance]]
 * [[Getting started with Eureka]]
 
