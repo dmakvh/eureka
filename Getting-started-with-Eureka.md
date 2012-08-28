@@ -31,7 +31,7 @@ Eureka can be run in both the AWS and the non-AWS environments. Following are th
 * Git version 1.7.11.3 or higher
 * Gradle 1.0-milestone-9 or higher
 
-A good place to start for the setups, is the built in sample application that comes with Eureka which demonstrates all of the 3 setups explained above. Build and run this to familiarize yourself with the setups before you can do advanced (todo :url) setups with eureka clusters within and outside of AWS.
+A good place to start for the setups, is the built-in sample application that comes with Eureka which demonstrates all of the 3 setups explained above. Build and run this to familiarize yourself with the setups before you can do advanced (todo :url) setups with eureka clusters within and outside of AWS.
 
 Here is a step by step instruction of the setups for building and running the Sample Eureka Server, Application Client and Application Service
 
