@@ -38,9 +38,9 @@ Here is a step by step instruction of the setups for building and running the Sa
 * Install the latest git (todo:link) and gradle (todo:link) packages.
 * Get the Eureka build source from github
 
-   `` git remote add --track eureka build git@github.com:Netflix/gradle-template.git  
+   <pre><code> git remote add --track eureka build git@github.com:Netflix/gradle-template.git  
       git fetch build  
-      git merge build/eureka``
+      git merge build/eureka<pre><code>
 
 *  Get the Eureka source from github
 
