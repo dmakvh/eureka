@@ -84,7 +84,8 @@ Here is a step by step instruction of the setups for building and running the Sa
     ./gradlew -I gradle/netflix-oss.gradle clean build
     </pre></code> 
 
-This generates a WAR(web application archive) artifact - _**./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war**_
+  This generates a WAR(web application archive) artifact - _**./eureka-server/build/libs/eureka-server-  
+  <version>-SNAPSHOT.war**_
 
 * This WAR contains all the server configurations you changed. Copy this to the your tomcat deployment directory under _$TOMCAT_HOME/webapps/ _
 
