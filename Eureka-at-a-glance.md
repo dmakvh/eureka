@@ -6,7 +6,7 @@ Eureka is a REST (Representational State Transfer) based service that is primari
 
 In AWS cloud, because of it's inherent nature, servers come and go. Unlike the traditional load balancers which work with servers with well known ip addresses and hostnames, in AWS, load balancing requires much more sophistication in registering and de-registering servers with load balancer on the fly. Since, AWS does not yet provide a middle tier load balancer, Eureka fills a big gap in the area of mid-tier load balancing.
 
-## How different is Eureka from the AWS ELB?
+## How different is Eureka from AWS ELB?
 
 AWS Elastic Load Balancer is a load balancing solution for edge services exposed to end-user web traffic. Eureka fills the need for mid-tier load balancing. While you can theoretically put your mid-tier services behind the AWS ELB, you expose them to the outside world and there by losing all the usefulness of the AWS security groups.
 
@@ -14,7 +14,7 @@ AWS ELB is also a traditional proxy-based load balancing solution whereas with E
 
 Another important aspect that differentiates proxy-based load balancing from Eureka based load balancing is that your application can be resilient to the outages of the load balancers in the case of Eureka since the information of all the servers is cached on the client. Of course, it comes with a small price to pay in terms of memory usage but is well worth it for resiliency.
 
-## How different is Eureka from the Route 53?
+## How different is Eureka from Route 53?
 
 Route 53 is a naming service which Eureka can provide the same for the mid-tier servers and the similarity stops there. Route 53 is a DNS service which can host your DNS records even for non-AWS data centers. Route 53 can also do latency based routing across AWS regions. Eureka is analogous to internal DNS and has nothing to do with the DNS servers across the world. Eureka is also region-isolated in the sense that it does hold data from other AWS regions. It's primary purpose of holding information is load balancing within a region.
 
