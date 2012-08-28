@@ -4,7 +4,7 @@ Eureka is a REST (Representational State Transfer) based service that is primari
 
 ## What is the need for Eureka?
 
-In AWS cloud, because of it's inherent nature, servers come and go. Unlike the traditional load balancers which work with servers with well known ip addresses and hostnames, in AWS, load balancing requires much more sophistication in registering and de-registering servers with load balancer on the fly. Since, AWS does not yet provide a middle tier load balancer, Eureka fills a big gap in the area of mid-tier load balancing.
+In AWS cloud, because of it's inherent nature, servers come and go. Unlike the traditional load balancers which work with servers with well known ip addresses and host names, in AWS, load balancing requires much more sophistication in registering and de-registering servers with load balancer on the fly. Since, AWS does not yet provide a middle tier load balancer, Eureka fills a big gap in the area of mid-tier load balancing.
 
 ## How different is Eureka from AWS ELB?
 
@@ -16,6 +16,6 @@ Another important aspect that differentiates proxy-based load balancing from Eur
 
 ## How different is Eureka from Route 53?
 
-Route 53 is a naming service which Eureka can provide the same for the mid-tier servers and the similarity stops there. Route 53 is a DNS service which can host your DNS records even for non-AWS data centers. Route 53 can also do latency based routing across AWS regions. Eureka is analogous to internal DNS and has nothing to do with the DNS servers across the world. Eureka is also region-isolated in the sense that it does hold not data from other AWS regions. It's primary purpose of holding information is for load balancing within a region.
+Route 53 is a naming service which Eureka can provide the same for the mid-tier servers and the similarity stops there. Route 53 is a DNS service which can host your DNS records even for non-AWS data centers. Route 53 can also do latency based routing across AWS regions. Eureka is analogous to internal DNS and has nothing to do with the DNS servers across the world. Eureka is also region-isolated in the sense that it does not data from other AWS regions. It's primary purpose of holding information is for load balancing within a region.
 
 While you can register your mid-tier servers with Route 53 and rely on AWS security groups to protect your servers from public access, your mid-tier server identity is still exposed to the external world. It also comes with the draw back of the traditional DNS based load balancing solutions where the traffic will be routed to servers that no longer exists which is especially not uncommon in the AWS world.
