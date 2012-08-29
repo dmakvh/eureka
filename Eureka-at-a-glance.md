@@ -34,14 +34,28 @@ It could be anything you wish.Eureka helps you finding the information of the se
 
 The above is the typical architecture you would run Eureka with. There is **one** eureka cluster per **region** which knows only about instances in its region. There is **one** eureka server per **zone** to handle zone failures.
 
-Services **register** with Eureka and then send **heartbeats** to renew their leases every 30 seconds.The registration information and the renewals are replicated to all the eureka nodes in the cluster. The clients from any zone can look up the **registry** information (happens every 30 seconds) to locate their services (which could be in any zone) and make remote calls.
+Services **register** with Eureka and then send **heartbeats** to renew their leases every 30 seconds.If the client cannot renew the lease for a few times, it is taken out of the server registry in about 90 seconds.The registration information and the renewals are replicated to all the eureka nodes in the cluster. The clients from any zone can look up the **registry** information (happens every 30 seconds) to locate their services (which could be in any zone) and make remote calls.
 
 ## Configurability
 
-Eureka comes with a host of configurability options. You can add or remove eureka cluster nodes on the fly.You can run a side kick for non-java services so that they can be found by other clients. You can customize the communication mechanism between clusters.
+With Eureka you can add or remove cluster nodes on the fly. You can tune the internal configurations from timeouts to thread pools. Eureka uses [archaius](https://github.com/Netflix/archaius) and if you had a configuration source implementation a lot of these configurations can be tuned dynamically.
+
+## Non-java services and clients
+
+For services that do not run in java, you can run a side kick to register your service and be found by your clients. REST based endpoints are also exposed for all operations that are supported by the Eureka client. Non-java clients can use the REST end points to query for information about other services.
 
 ## Resilience
 
-## Multiple region
+Being in the AWS cloud, it is hard to not think about resilience. Eureka benefits from this experience, with the resilience built into both the client and the servers.
+
+Eureka clients are built to handle the failure of one or more Eureka servers. Since Eureka clients have the registry cache information in them, they can probably operate reasonably well even when all of the eureka servers go down.
+
+Eureka Servers are resilient to other eureka peers going down. Even during a network partition between the clients and servers, the servers have built-in resiliency to prevent a large scale outage.
+
+## Multiple Regions
+
+Eureka can be deployed in any AWS region without doing too much work. In fact, you want to deploy it in a non-AWS data center, you can. Eureka clusters between regions do not communicate with one another.
 
 ## Monitoring
+
+
