@@ -52,16 +52,7 @@ Here is a step by step instruction of the setups for building and running the Sa
     </pre></code> 
   
   The Eureka configuration searches the client related property files in eureka-client.properties in the    
-   _classpath_. It also searches for the environment specific properties specified by <pre><code>-Deureka.environment</pre></code> for different environments like   
-  _test_ and _prod_. 
-
-   The search location can be changed by passing in the system properties (Do not pass in      
-   the suffix)
-
-   <pre><code> 
-   -Deureka.client.props
-   -Deureka.server.props
-   </pre></code> 
+   _classpath_. It also searches for the environment specific properties specified by <pre><code>-Deureka.environment</pre></code> for different environments like _test_ and _prod_. 
 
    The properties in the files explain what they are for. At the minimum the following things need to be     
    configured
