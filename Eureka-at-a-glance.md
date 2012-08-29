@@ -20,11 +20,9 @@ Route 53 is a naming service which Eureka can provide the same for the mid-tier 
 
 While you can register your mid-tier servers with Route 53 and rely on AWS security groups to protect your servers from public access, your mid-tier server identity is still exposed to the external world. It also comes with the draw back of the traditional DNS based load balancing solutions where the traffic will be routed to servers that no longer exists which is especially not uncommon in the AWS world.
 
-Eureka - High level architecture
+## Eureka - High level architecture
 
 ![Eureka High level Architecture](https://github.com/Netflix/eureka/raw/master/images/eureka_architecture.png)
-
-[!https://github.com/Netflix/eureka/raw/master/images/eureka_architecture.png(Eureka Architecture)!]
 
 Eureka - Configurability
 Eureka - Resilience
