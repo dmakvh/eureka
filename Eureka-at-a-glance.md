@@ -29,17 +29,19 @@ You typically run in the AWS cloud and you have a host of middle tier services w
 It could be anything you wish.Eureka helps you finding the information of the services you would want to communicate with but does not impose any communication level restrictions. The communication could be on http or https or at the socket level.
 
 
-## Eureka - High level architecture
+## High level architecture
 ![Eureka High level Architecture](https://github.com/Netflix/eureka/raw/master/images/eureka_architecture.png)
 
 The above is the typical architecture you would run Eureka with. There is **one** eureka cluster per **region** which knows only about instances in its region. There is **one** eureka server per **zone** to handle zone failures.
 
 Services **register** with Eureka and then send **heartbeats** to renew their leases every 30 seconds.The registration information and the renewals are replicated to all the eureka nodes in the cluster. The clients from any zone can look up the **registry** information (happens every 30 seconds) to locate their services (which could be in any zone) and make remote calls.
 
-Eureka - Configurability
+## Configurability
 
+Eureka comes with a host of configurability options. You can add or remove eureka cluster nodes on the fly.You can run a side kick for non-java services so that they can be found by other clients. You can customize the communication mechanism between clusters.
 
+## Resilience
 
-Eureka - Resilience
-Eureka in multi region
-Eureka - Monitoring
+## Multiple region
+
+## Monitoring
