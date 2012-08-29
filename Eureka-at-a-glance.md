@@ -22,6 +22,7 @@ While you can register your mid-tier servers with Route 53 and rely on AWS secur
 
 Eureka - High level architecture
 
+![Eureka High level Architecture](https://github.com/Netflix/eureka/raw/master/images/eureka_architecture.png)
 
 [!https://github.com/Netflix/eureka/raw/master/images/eureka_architecture.png(Eureka Architecture)!]
 
