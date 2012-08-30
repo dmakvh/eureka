@@ -25,9 +25,11 @@ At Netflix, Eureka is used for the following purposes apart from playing a criti
 
 * Used for red/black deployments with Netflix [Asgard](https://github.com/Netflix/asgard)- an open source service which makes cloud deployment easier. Eureka interacts with Asgard to make switching between older/newer release of a deployment of services quick and seamless in case of problems - especially given that launching 100's of instances to deploy a release could take a long time.
 
-* Used for carrying other additional application specific metadata about services for various other reasons.
-* For memcached services to identify the list of nodes in the ring.
 * For our [cassandra](https://github.com/Netflix/Priam) deployments to take instances out of traffic for maintenance.
+
+* For memcached services to identify the list of nodes in the ring.
+
+* Used for carrying other additional application specific metadata about services for various other reasons.
 
 ## When should I use Eureka?
 
