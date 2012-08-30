@@ -20,7 +20,7 @@ Route 53 is a naming service which Eureka can provide the same for the mid-tier 
 
 While you can register your mid-tier servers with Route 53 and rely on AWS security groups to protect your servers from public access, your mid-tier server identity is still exposed to the external world. It also comes with the draw back of the traditional DNS based load balancing solutions where the traffic can still be routed to servers which may not be healthy or may not even exist (in the case of AWS cloud where servers can disappear anytime).
 
-## How is Eureka used in Netflix?
+## How is Eureka used at Netflix?
 At Netflix, Eureka is used for the following purposes apart from playing a critical part in mid-tier load balancing.
 
 * Used for red/black deployments with Netflix [Asgard](https://github.com/Netflix/asgard)- an open source service which makes cloud deployment easier. Eureka interacts with Asgard to make switching between older/newer release of a deployment of services quick and seamless in case of problems - especially given that launching 100's of instances to deploy a release could take a long time.
