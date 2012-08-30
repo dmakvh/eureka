@@ -58,5 +58,5 @@ Deploying Eureka in multiple AWS regions is a fairly straightforward task. Eurek
 
 ## Monitoring
 
-Eureka uses [servo](https://github.com/Netflix/servo/wiki) to track a lot information in both the client and the server for performance, monitoring and alerting.The data is typically available in the JMX registry and can optionally be exported to Amazon Cloud Watch
+Eureka uses [servo](https://github.com/Netflix/servo/wiki) to track a lot information in both the client and the server for performance, monitoring and alerting.The data is typically available in the JMX registry and can be exported to Amazon Cloud Watch.
 
