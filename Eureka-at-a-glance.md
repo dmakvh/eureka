@@ -12,7 +12,7 @@ AWS Elastic Load Balancer is a load balancing solution for edge services exposed
 
 AWS ELB is also a traditional proxy-based load balancing solution whereas with Eureka it is different in that sense since the load balancing happens at the instance/server/host level.The client instances know all the information about which servers it need to talk to. This is a blessing or a curse depending on which way you look at it. If you are looking for a sticky user session based load balancing which the AWS now offers, Eureka does not offer a solution out of the box. In fact, in Netflix, most of the load balancing is not sticky user session based mostly because you can scale better without sticky sessions and hence this model works great.
 
-Another important aspect that differentiates proxy-based load balancing from Eureka based load balancing is that your application can be resilient to the outages of the load balancers in the case of Eureka since the information of all the servers is cached on the client. Of course, it comes with a small price to pay in terms of memory usage but is well worth it for resiliency.
+Another important aspect that differentiates proxy-based load balancing from load balancing using Eureka is that your application can be resilient to the outages of the load balancers in the case of Eureka, since the information of all the servers is cached on the client. Of course, it comes with a small price to pay in terms of memory usage but is well worth it for resiliency.
 
 ## How different is Eureka from Route 53?
 
