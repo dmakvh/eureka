@@ -39,7 +39,7 @@ Here is a step by step instruction of the setups for building and running the Sa
 
 *  Get the Eureka source from github
    <pre><code> 
-    git remote add --track eureka git@github.com:Netflix/eureka.git
+    git remote add --track master origin git@github.com:Netflix/eureka.git
     git pull
    </pre></code> 
 
