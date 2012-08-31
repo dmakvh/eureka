@@ -31,7 +31,7 @@ Eureka can be run in both the AWS and the non-AWS environments. Following are th
 
 ## Configuring Eureka Client
 
-You can download the Eureka Client binary from "Maven Central":http://search.maven.org/ or use this URL "http://search.maven.org/#search%7Cga%7C1%7Ceureka-client":http://search.maven.org/#search%7Cga%7C1%7Ceureka-client
+You can download the Eureka Client binary from "Maven Central":http://search.maven.org/ or use this URL "http://search.maven.org/#search%7Cga%7C1%7Ceureka-client"
 
 To add Archaius to your maven dependency, use the following 
 ```xml
@@ -41,6 +41,9 @@ To add Archaius to your maven dependency, use the following
   <version>1.1.1</version>
  </dependency>
 ```
+
+By default, the Eureka client searches for property files ({eureka-client}.properties) in the classpath. It further searches for environment specific overrides in the environment specific properties files. The environment can be "test" or "prod" and is supplied by a "-Deureka.environment" java commandline switch to the eureka client. Accordingly the server also searches for {eureka-client}-{test,prod}.properties
+ 
 
 A good place to start for the setups, is the built-in sample application that comes with Eureka which demonstrates all of the 3 setups explained above. Build and run this to familiarize yourself with the setups before you can do advanced (todo :url) setups with eureka clusters within and outside of AWS.
 
