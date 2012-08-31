@@ -6,7 +6,13 @@
     git pull
    </pre></code> 
 
-* Navigate to eureka-server/conf/ and edit the following files to configure the eureka server. Eureka server also needs its own Eureka Client configuration as with any other application.
+* Eureka server has Eureka client built in and as with any other application relies on the client to be configured.
+
+ By default, the Eureka server searches for property files eureka-client.properties in the classpath. It further searches for environment specific overrides in the environment specific properties files. The environment is typically "test" or "prod" and is supplied by a "-Deureka.environment" java commandline switch to the eureka client (without the .properties suffix). Accordingly the client also searches for eureka-client-{test,prod}.properties.
+
+Additionally, the same searching mechanism is used for Eureka Server by searching for eureka-server-{test,prod}.properties.
+
+Navigate to eureka-server/conf/ and edit the following files to configure the eureka server. Eureka server also needs its own Eureka Client configuration as with any other application.
     <pre><code> 
     eureka-client.properties
     eureka-client-test.properties
