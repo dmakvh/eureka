@@ -67,4 +67,10 @@ With Eureka server, you have the following choices to get the binaries
 
 *  You can download the WAR archive from mavencentral by using this URL  
    "http://search.maven.org/#search%7Cga%7C1%7Ceureka-server" 
- 
+
+Eureka Server has two sets of configurations
+
+* Eureka Client configuration as explain above.
+* Eureka Server configuration.
+
+The easiest way to configure Eureka Server is by using property files similar to the Eureka Client above. First, configure the Eureka client that is running with the server as specified
