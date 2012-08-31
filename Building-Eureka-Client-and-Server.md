@@ -2,9 +2,21 @@
 
 *  Get the Eureka source from github
    <pre><code> 
+    git init
     git remote add --track master origin git@github.com:Netflix/eureka.git
     git pull
    </pre></code> 
+
+* Now, build the Eureka Server by executing the following in the directory where you pulled your sources.
+
+    <pre><code> 
+    ./gradlew -I gradle/netflix-oss.gradle clean build
+    </pre></code> 
+
+* You can find the following artifacts 
+     * Eureka Server WAR archive (./eureka-server/build/libs/eureka-server-XXX-SNAPSHOT.war )
+     * Eureka Client (./eureka-client/build/libs/eureka-client-XXX-SNAPSHOT.war )
+
 
 * Eureka server has Eureka client built in and as with any other application relies on the client to be configured.
 
