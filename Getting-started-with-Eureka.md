@@ -58,7 +58,11 @@ The properties in the files explain what they are for. At the minimum the follow
     Virtual HostName (eureka.vipAddress)
     Eureka Service Urls (eureka.serviceUrls)
    </pre></code> 
- 
+
+For more advanced configurations, check out the options available in the following links.
+http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/appinfo/EurekaInstanceConfig.html
+http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/discovery/EurekaClientConfig.html
+
 ## Configuring Eureka Server
 
 With Eureka server, you have the following choices to get the binaries
