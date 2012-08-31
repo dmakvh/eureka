@@ -13,6 +13,8 @@ The setups involve the following
 
 Eureka can be run in both the AWS and the non-AWS environments. Following are the prerequisites.
 
+**If you are running in the cloud environment, please pass in the java commandline property_ -Deureka.datacenter=cloud_ so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.**
+
 # Prerequisites
 
 ## Eureka Server
