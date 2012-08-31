@@ -31,7 +31,7 @@ Eureka can be run in both the AWS and the non-AWS environments. Following are th
 
 ## Configuring Eureka Client
 
-You can download the Eureka Client binary from "Maven Central":http://search.maven.org/ or use this URL "http://search.maven.org/#search%7Cga%7C1%7Ceureka-client"
+You can download the Eureka Client binary by using this URL "http://search.maven.org/#search%7Cga%7C1%7Ceureka-client"
 
 To add Archaius to your maven dependency, use the following 
 ```xml
