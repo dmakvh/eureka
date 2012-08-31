@@ -1,11 +1,9 @@
+Read the document [here](https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance) to understand the concepts of the setup better.
+
 Eureka comes with two components - **Eureka Client** and the **Eureka Server**. Your architecture which is using Eureka will typically have two applications
 
 * **Application Client** which uses Eureka Client to make requests to the Application Service.
 * **Application Service** which receives requests from Application Client and sends a response back.
-
-The Application Service will first have to register with Eureka Server to be discovered by Application Client. Registering Application Client with Eureka is optional, but registration happens anyway by default. Both the client and the service uses Eureka Client (java based) to register with Eureka Server.If you are using a non-java based application you need to use REST(todo:attach link) endpoints to register with Eureka.
-
-Once registered with Eureka Server, the Eureka Client by default pulls this registration information every 30 seconds (configurable) to its local cache and can find information about the service or make calls to the remote service.
 
 The setups involve the following
 
@@ -30,6 +28,19 @@ Eureka can be run in both the AWS and the non-AWS environments. Following are th
 
 * Git version 1.7.11.3 or higher
 * Gradle 1.0-milestone-9 or higher
+
+## Configuring Eureka Client
+
+You can download the Eureka Client binary from "Maven Central":http://search.maven.org/ or use this URL "http://search.maven.org/#search%7Cga%7C1%7Ceureka-client":http://search.maven.org/#search%7Cga%7C1%7Ceureka-client
+
+To add Archaius to your maven dependency, use the following 
+```xml
+ <dependency>
+  <groupId>com.netflix.eureka</groupId>
+  <artifactId>eureka-client</artifactId>
+  <version>1.1.1</version>
+ </dependency>
+```
 
 A good place to start for the setups, is the built-in sample application that comes with Eureka which demonstrates all of the 3 setups explained above. Build and run this to familiarize yourself with the setups before you can do advanced (todo :url) setups with eureka clusters within and outside of AWS.
 
