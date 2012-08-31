@@ -78,3 +78,7 @@ Eureka Server has two sets of configurations
 * Eureka Server configuration.
 
 The easiest way to configure Eureka Server is by using property files similar to the Eureka Client above. First, configure the Eureka client that is running with the server as specified above with Eureka Client for the server to identify itself. 
+
+By default, the Eureka server searches for property files _eureka-server.properties_ in the _classpath_. It further searches for environment specific overrides in the environment specific properties files. The environment is typically _test_ or _prod_ and is supplied by a _-Deureka.environment_ java commandline switch to the eureka client (without the _.properties_ suffix). Accordingly the client also searches for _eureka-server-{test,prod}.properties._
+
+For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html).
