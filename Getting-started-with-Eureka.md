@@ -42,9 +42,17 @@ To add eureka client to your maven dependency, use the following
  </dependency>
 ```
 
-The easiest way to configure Eureka client is by using the property files.By default, the Eureka client searches for property files eureka-client.properties in the classpath. It further searches for environment specific overrides in the environment specific properties files. The environment is typically "test" or "prod" and is supplied by a "-Deureka.environment" java commandline switch to the eureka client (without the .properties suffix). Accordingly the client also searches for eureka-client-{test,prod}.properties.
+The easiest way to configure Eureka client is by using the property files.By default, the Eureka client searches for property files _eureka-client.properties_ in the _classpath_. It further searches for environment specific overrides in the environment specific properties files. The environment is typically _test_ or _prod_ and is supplied by a _-Deureka.environment_ java commandline switch to the eureka client (without the _.properties_ suffix). Accordingly the client also searches for _eureka-client-{test,prod}.properties._
 
-You can take a look at the examples [here](https://github.com/Netflix/eureka/tree/master/eureka-server/conf)  for default configurations. You can copy this configuration and edit for your need and place them in your class path. If you want to change the name of the properties file for some reason you can do so by specifying "-Deureka.client.props=<myprops>" (without suffix) in the java commandline switch.
+You can take a look at the examples [here](https://github.com/Netflix/eureka/tree/master/eureka-server/conf)  for default configurations. You can copy this configuration and edit for your need and place them in your class path. If you want to change the name of the properties file for some reason you can do so by specifying _-Deureka.client.props=<myprops>_  (without suffix) in the java commandline switch, where _<myprops>_ in the name of the property file to search for for.
+
+The properties in the files explain what they are for. At the minimum the following things need to be configured
+    <pre><code> 
+    Application Name (eureka.name)
+    Application Port (eureka.port)
+    Virtual HostName (eureka.vipAddress)
+    Eureka Service Urls (eureka.serviceUrls)
+   </pre></code> 
  
 ## Configuring Eureka Server
 
@@ -75,7 +83,7 @@ Here is a step by step instruction of the setups for building and running the Sa
     eureka-server-test.properties
     </pre></code> 
   
-  The Eureka configuration searches the client related property files in eureka-client.properties in the    
+  The Eureka configuration searches the client related property files in _eureka-client.properties_ in the    
    _classpath_. It also searches for the environment specific properties specified by <pre><code>-Deureka.environment</pre></code> for different environments like _test_ and _prod_. 
 
    The properties in the files explain what they are for. At the minimum the following things need to be     
