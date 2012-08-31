@@ -1,2 +1,2 @@
-* "Javadoc - Eureka Client":http://netflix.github.com/eureka/javadoc/eureka-client/index.html* "
-* "Javadoc - Eureka Server":http://netflix.github.com/eureka/javadoc/eureka-core/index.html* "
+* "Javadoc-Eureka Client":http://netflix.github.com/eureka/javadoc/eureka-client/index.html*
+* "Javadoc-Eureka Server":http://netflix.github.com/eureka/javadoc/eureka-core/index.html*
