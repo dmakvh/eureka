@@ -42,7 +42,17 @@ To add Archaius to your maven dependency, use the following
  </dependency>
 ```
 
-By default, the Eureka client searches for property files ({eureka-client}.properties) in the classpath. It further searches for environment specific overrides in the environment specific properties files. The environment can be "test" or "prod" and is supplied by a "-Deureka.environment" java commandline switch to the eureka client. Accordingly the server also searches for {eureka-client}-{test,prod}.properties
+The easiest way to configure Eureka client is by using the property files.By default, the Eureka client searches for property files eureka-client.properties in the classpath. It further searches for environment specific overrides in the environment specific properties files. The environment is typically "test" or "prod" and is supplied by a "-Deureka.environment" java commandline switch to the eureka client (without the .properties suffix). Accordingly the client also searches for eureka-client-{test,prod}.properties.
+
+You can take a look at the examples [here](https://github.com/Netflix/eureka/tree/master/eureka-server/conf)  for default configurations. You can copy this configuration and edit for your need and place them in your class path. If you want to change the name of the properties file for some reason you can do so by specifying "-Deureka.client.props=<myprops>" (without suffix) in the java commandline switch.
+ 
+## Configuring Eureka Server
+
+With Eureka server, you have two choices.
+
+*  You can either build a WAR archive from the sources with your configurations
+*  You can download the WAR archive from mavencentral by using this URL  
+   "http://search.maven.org/#search%7Cga%7C1%7Ceureka-server" 
  
 
 A good place to start for the setups, is the built-in sample application that comes with Eureka which demonstrates all of the 3 setups explained above. Build and run this to familiarize yourself with the setups before you can do advanced (todo :url) setups with eureka clusters within and outside of AWS.
