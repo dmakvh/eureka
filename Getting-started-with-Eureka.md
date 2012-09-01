@@ -25,7 +25,7 @@ You have the following choices to get the Eureka client binaries
 
 * You can download the Eureka Client binary by using this URL "http://search.maven.org/#search%7Cga%7C1%7Ceureka-client"
 
-* To add eureka client to your maven dependency, use the following 
+* You can add the eureka client as a maven dependency
 ```xml
  <dependency>
   <groupId>com.netflix.eureka</groupId>
