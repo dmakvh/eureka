@@ -11,7 +11,7 @@ The setups involve the following
 * Eureka Client for the application client
 * Eureka Client for the application service
 
-Eureka can be run in both the AWS and the non-AWS environments. Following are the prerequisites.
+Eureka can be run in both the AWS and the non-AWS environments.
 
 **If you are running in the cloud environment, please pass in the java commandline property -Deureka.datacenter=cloud so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.**
 
