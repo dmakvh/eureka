@@ -10,7 +10,7 @@
 * Now, build the Eureka Server by executing the following in the directory where you pulled your sources.
 
     <pre><code> 
-    ./gradlew -I gradle/netflix-oss.gradle clean build
+    ./gradlew clean build
     </pre></code> 
 
 * You can find the following artifacts 
