@@ -15,20 +15,11 @@ Eureka can be run in both the AWS and the non-AWS environments. Following are th
 
 **If you are running in the cloud environment, please pass in the java commandline property -Deureka.datacenter=cloud so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.**
 
-# Prerequisites
+# Configuring Eureka Client
 
-## Eureka Server
-
-* JDK 1.6 or higher 
-* Tomcat 6.0.10 or higher
-
-## Eureka Client
+## Prerequisites
 
 * JDK 1.6 or higher
-
-
-
-## Configuring Eureka Client
 
 You have the following choices to get the Eureka client binaries
 
@@ -60,7 +51,12 @@ For more advanced configurations, check out the options available in the followi
 http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/appinfo/EurekaInstanceConfig.html
 http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/discovery/EurekaClientConfig.html
 
-## Configuring Eureka Server
+# Configuring Eureka Server
+
+## Prerequisites
+
+* JDK 1.6 or higher 
+* Tomcat 6.0.10 or higher
 
 With Eureka server, you have the following choices to get the binaries
 
