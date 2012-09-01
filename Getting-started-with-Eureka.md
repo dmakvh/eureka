@@ -26,10 +26,7 @@ Eureka can be run in both the AWS and the non-AWS environments. Following are th
 
 * JDK 1.6 or higher
 
-## Eureka Build
 
-* Git version 1.7.11.3 or higher
-* Gradle 1.0-milestone-9 or higher
 
 ## Configuring Eureka Client
 
