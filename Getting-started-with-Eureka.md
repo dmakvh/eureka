@@ -8,8 +8,8 @@ Eureka comes with two components - **Eureka Client** and the **Eureka Server**. 
 The setups involve the following
 
 * Eureka Server
-* Eureka Client for the client
-* Eureka Client for the service
+* Eureka Client for the application client
+* Eureka Client for the application service
 
 Eureka can be run in both the AWS and the non-AWS environments. Following are the prerequisites.
 
