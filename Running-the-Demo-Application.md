@@ -4,13 +4,13 @@ The demo application comes packaged with the ability to configure,build and run 
 * Application Service
 * Application Client
 
-For more details on understanding the configuration [this](https://github.com/Netflix/eureka/wiki/Getting-started-with-Eureka) this page.
+For more details on understanding the configurations, visit [this](https://github.com/Netflix/eureka/wiki/Getting-started-with-Eureka) page.
 
 #About the Demo
 
-The demo will help you set up a Eureka Server listening in a port of your choice. The demo will also help you setup an Application service that would serve requests and an Application Client that will send requests to the service.
+The demo will help you set up a Eureka Server listening in a port of your choice. It will also help you setup an Application service that would serve requests and an Application Client that will send requests to the service.
 
-The Application Service registers with Eureka Server which the Application client can find and then send the request to the Application Service. The client and server exit gracefully after trading messages.
+The Application Service registers with the Eureka Server and the Application client can find and then send the request to the Application Service. The client and server exit gracefully after trading messages.
 
 #Eureka Server Configuration
 
@@ -23,7 +23,7 @@ The Application Service registers with Eureka Server which the Application clien
 *  Copy the WAR artifact to your tomcat deployment directory under _$TOMCAT_HOME/webapps/ 
 
     <pre><code>
-    cp ./eureka-server/build/libs/eureka-server-<version>-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war
+    cp ./eureka-server/build/libs/eureka-server-XXX-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war
     </pre></code> 
 
 * Start your tomcat server. Access _**http://localhost:<port>/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
