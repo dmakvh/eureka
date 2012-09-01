@@ -87,4 +87,4 @@ If you are [downloading]("http://search.maven.org/#search%7Cga%7C1%7Ceureka-serv
 
 For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html).
 
-Running the demo application may help you to understand the configurations more.
+[Running](https://github.com/Netflix/eureka/wiki/Running-the-Demo-Application) the demo application may help you to understand the configurations more.
