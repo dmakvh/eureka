@@ -5,6 +5,7 @@
 * [[Configuring Eureka in AWS Cloud]]
 * [[Configuring Eureka Clusters]]
 * [[Understanding Eureka Client/Server Communication]]
+* [[Eureka REST operations]]
 * [[Understanding Eureka Peer-Per communication]]
 * [[Understanding Eureka Resiliency]]
 * "Javadoc-Eureka Client":http://netflix.github.com/eureka/javadoc/eureka-client/index.html
