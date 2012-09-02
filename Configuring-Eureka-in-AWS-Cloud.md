@@ -54,6 +54,17 @@ txt.us-east-1e.mydomaintest.netflix.net=http://ec2-50-179-285-592.compute-1.amaz
 </code>
 </pre>
 
+And then you specify the following properties in the Eureka Server _(eureka-client.properties_) and all the Eureka clients for them to be able to look up DNS and find the information necessary for communication.
+
+<pre>
+<code>
+eureka.shouldUseDns=true
+eureka.domainName=mydomaintest.netflix.net
+eureka.port=7001
+eureka.context=eureka/v2
+</code>
+</pre>
+
 At Netflix, we use this model to dynamically add/remove new Eureka server thus propogating the information to thousands of clients within a few minutes.
 
 
@@ -64,5 +75,3 @@ So, why are we defining URLs when we are supposed to assign EIPs to servers?Any 
 Eureka server finds an EIP based on which zone it is launched. It then tries to find an unused EIP from that zone and then binds that EIP to itself during the startup.
 
 How does Eureka find unused EIPs? It uses the Eureka client to find the list of peer instances and see what EIPS they are bound with and picks the one that is not bound.It prefers to find the EIP assigned to its zone , so that the Eureka clients of the all the other instances in the zone can talk to Eureka server that are co-located in the same zone. If the Eureka server cannot find any EIPS free for its zone, it tries the EIPs assigned from other zones.If all of them are bound, then the Eureka server starts up and waits for an EIP to get free and tries every 5 mins to bind the EIP.
-
-## How do Eureka clients communicate to Eureka Servers 
