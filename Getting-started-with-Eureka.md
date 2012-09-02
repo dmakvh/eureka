@@ -86,4 +86,4 @@ For more advanced server configurations, refer to the options available [here](h
 
 [Running](https://github.com/Netflix/eureka/wiki/Running-the-Demo-Application) the demo application may help you to understand the configurations better.
 
-Check this page for additional configurations required for AWS cloud.
+Check [this](https://github.com/Netflix/eureka/wiki/Configuring-Eureka-in-AWS-Cloud) page for additional configurations required for AWS cloud.
