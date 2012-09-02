@@ -19,7 +19,7 @@ eureka.us-east-1.availabilityZones=us-east-1c,us-east-1d,us-east-1e
 </code>
 </pre>
 
-The next information you configure is the service urls for each zone where Eureka is listening for requests. Multiple eureka servers for a zone can be configured by providing a comma-delimited list.
+Next, you configure is the service urls for each zone where Eureka is listening for requests. Multiple eureka servers for a zone can be configured by providing a comma-delimited list.
 <pre>
 <code>
 eureka.serviceUrl.us-east-1c=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
@@ -28,8 +28,36 @@ eureka.serviceUrl.us-east-1e=http://ec2-50-179-285-592.compute-1.amazonaws.com:7
 </code>
 </pre>
 
+The same configuration is then included with Eureka clients that register with Eureka Service and also with Eureka client that want to find the services from Eureka Server.
 
-<a name="assigneip">## Assigning EIPs using Service Urls</a>
+##Configuring EIPs using DNS
+
+If you are looking for flexibility, you should configure Eureka service URLs using DNS.
+
+You first configure a DNS name for region that can be used to find the list of available zones. Since, using  DNS you can find only one CNAME for a DNS name, we use the TXT records to find a list of comma delimited DNS name. 
+
+For instance, following is a DNS TXT record created in the DNS server that lists the set of available DNS names for a zones.
+
+<pre>
+<code>
+txt.us-east-1.mydomaintest.netflix.net=us-east-1c.mydomaintest.netflix.net,us-east-1d.mydomaintest.netflix.net,us-east-1e.mydomaintest.netflix.net
+</code>
+</pre>
+
+Then, you can define TXT records recursively for each zone similar to the following
+
+<pre>
+<code>
+txt.us-east-1a.mydomaintest.netflix.net=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
+txt.us-east-1d.mydomaintest.netflix.net=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/
+txt.us-east-1e.mydomaintest.netflix.net=http://ec2-50-179-285-592.compute-1.amazonaws.com:7001/discovery/v2/
+</code>
+</pre>
+
+At Netflix, we use this model to dynamically add/remove new Eureka server thus propogating the information to thousands of clients within a few minutes.
+
+
+##Assigning EIPs using Service Urls
 
 So, why are we defining URLs when we are supposed to assign EIPs to servers?Any 2 instances which wants to communicate with one another normally uses a public hostname so that the AWS security groups honor the security restrictions.Eureka servers communicate with one another using these URLs and each URL contains a public hostname ( _ec2-552-627-568-165.compute-1.amazonaws.com_)  which is derived from an elastic ip (552.627.568.165). 
 
@@ -37,4 +65,4 @@ Eureka server finds an EIP based on which zone it is launched. It then tries to 
 
 How does Eureka find unused EIPs? It uses the Eureka client to find the list of peer instances and see what EIPS they are bound with and picks the one that is not bound.It prefers to find the EIP assigned to its zone , so that the Eureka clients of the all the other instances in the zone can talk to Eureka server that are co-located in the same zone. If the Eureka server cannot find any EIPS free for its zone, it tries the EIPs assigned from other zones.If all of them are bound, then the Eureka server starts up and waits for an EIP to get free and tries every 5 mins to bind the EIP.
 
-
+## How do Eureka clients communicate to Eureka Servers 
