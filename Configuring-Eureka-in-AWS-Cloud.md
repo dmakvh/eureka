@@ -65,7 +65,7 @@ eureka.context=eureka/v2
 </code>
 </pre>
 
-At Netflix, we use this model to dynamically add/remove new Eureka server thus propogating the information to thousands of clients within a few minutes.
+At Netflix, we use this model to dynamically add/remove new Eureka server thus propagating the information to thousands of clients within a few minutes.
 
 
 ##Assigning EIPs using Service Urls
@@ -75,3 +75,5 @@ So, why are we defining URLs when we are supposed to assign EIPs to servers?Any 
 Eureka server finds an EIP based on which zone it is launched. It then tries to find an unused EIP from that zone and then binds that EIP to itself during the startup.
 
 How does Eureka find unused EIPs? It uses the Eureka client to find the list of peer instances and see what EIPS they are bound with and picks the one that is not bound.It prefers to find the EIP assigned to its zone , so that the Eureka clients of the all the other instances in the zone can talk to Eureka server that are co-located in the same zone. If the Eureka server cannot find any EIPS free for its zone, it tries the EIPs assigned from other zones.If all of them are bound, then the Eureka server starts up and waits for an EIP to get free and tries every 5 mins to bind the EIP.
+
+The Eureka clients similarly try to find a Eureka server co-located in the same zone and if it does not find any, it fails over to the Eureka servers in the other zones.
