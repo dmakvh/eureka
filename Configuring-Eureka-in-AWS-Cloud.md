@@ -29,7 +29,7 @@ eureka.serviceUrl.us-east-1e=http://ec2-50-179-285-592.compute-1.amazonaws.com:7
 </pre>
 
 
-## <a name="assigneip">Assigning EIPs using Service Urls</a>
+<a name="assigneip">## Assigning EIPs using Service Urls</a>
 
 So, why are we defining URLs when we are supposed to assign EIPs to servers?Any 2 instances which wants to communicate with one another normally uses a public hostname so that the AWS security groups honor the security restrictions.Eureka servers communicate with one another using these URLs and each URL contains a public hostname ( _ec2-552-627-568-165.compute-1.amazonaws.com_)  which is derived from an elastic ip (552.627.568.165). 
 
