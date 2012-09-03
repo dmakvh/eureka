@@ -95,7 +95,7 @@ This is done when the Eureka client shuts down and the application should make s
 
 ## Time Lag
 
-All operations from Eureka client may take some time to reflect on the Eureka servers and subsequently in other Eureka clients. This is because of the caching of the payload on the eureka server which happens periodically to reflect the new data. The Eureka clients also fetch the delta periodically.
+All operations from Eureka client may take some time to reflect on the Eureka servers and subsequently in other Eureka clients. This is because of the caching of the payload on the eureka server which happens periodically to reflect the new data. The Eureka clients also fetch the delta periodically. Hence, it may take up to 2 mins for the changes for all Eureka clients to know the changes.
            
 
 
