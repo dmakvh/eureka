@@ -26,7 +26,7 @@ Eureka client looks for _eureka-client.properties_ as explained [here](https://g
 
 By default, Eureka client starts in **STARTING** state which gives the instance a change to do application-specific initializations, before it can serve traffic. 
 
-The application then can explicitly put the instance for traffic, by turning the instance status to **UP**. The application can also register health check callbacks 
+The application then can explicitly put the instance for traffic, by turning the instance status to **UP**. The application can also register health check [callbacks](http://netflix.github.com/eureka/javadoc/eureka-client/index.html) which can change the instance status to **DOWN** optionally.
 
 This kickstarts the communication process between Eureka client and the server by registering the Eureka Client to the server. Eureka client first tries to talk to the Eureka Server in the same zone in the AWS cloud and if it cannot find the server it fails over to the other zones.
 
