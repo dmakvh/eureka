@@ -26,9 +26,21 @@ Eureka client looks for _eureka-client.properties_ as explained [here](https://g
 
 By default, Eureka client starts in **STARTING** state which gives the instance a change to do application-specific initializations, before it can serve traffic. 
 
-The application then can explicitly put the instance for traffic, by turning the instance status to **UP**. The application can also register health check [callbacks](http://netflix.github.com/eureka/javadoc/eureka-client/index.html) which can change the instance status to **DOWN** optionally.
+The application then can explicitly put the instance for traffic, by turning the instance status to **UP**.
 
-This kickstarts the communication process between Eureka client and the server by registering the Eureka Client to the server. Eureka client first tries to talk to the Eureka Server in the same zone in the AWS cloud and if it cannot find the server it fails over to the other zones.
+<pre>
+<code>
+     ApplicationManager.getInstance().setInstanceStatus(InstanceStatus.UP)
+</code>
+</pre>
+The application can also register health check [callbacks](http://netflix.github.com/eureka/javadoc/eureka-client/index.html) which can change the instance status to **DOWN** optionally.
+
+At Netflix, we also use the **OUT_OF_SERVICE** status primarily for taking an instance out of traffic. It is used for easy rollback of deployments of new revisions in case of problems. Most applications create a new ASG for a new revision and the traffic gets routed the new ASGs. In the case of problems, rolling back a revision is just a matter of turning off the traffic by setting all instances in the ASG to **OUT_OF_SERVICE**.
+
+
+## Eureka Client Operations
+
+Eureka client first tries to talk to the Eureka Server in the same zone in the AWS cloud for all operations and if it cannot find the server it fails over to the other zones.
 
 The Eureka client interacts with the server the following ways
 
@@ -48,7 +60,19 @@ After getting the deltas, Eureka client reconciles the information with the serv
 
 ## Cancel
 
+Eureka client sends a cancel request to server on shutdown. This effectively removes the instance from the server's instance registry there by effectively taking the instance out for traffic.
 
+This is done when the Eureka client shuts down and the application should make sure to call the following during its shutdown.
+
+<pre>
+<code>
+     DiscoveryManager.getInstance().shutdownComponent()
+</code>
+</pre>
+
+## Time Lag
+
+All operations from Eureka client may take some time to reflect on the Eureka servers and subsequently on other Eureka clients. This is because
            
 
 
