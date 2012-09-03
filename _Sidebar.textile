@@ -3,7 +3,6 @@
 * [[Building Eureka Client and Server]]
 * [[Running the Demo Application]]
 * [[Configuring Eureka in AWS Cloud]]
-* [[Configuring Eureka Clusters]]
 * [[Understanding Eureka Client/Server Communication]]
 * [[Eureka REST operations]]
 * [[Understanding Eureka Peer-Peer communication]]
