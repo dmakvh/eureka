@@ -24,3 +24,5 @@ Eureka client looks for _eureka-client.properties_ as explained [here](https://g
 
 This kickstarts the communication process between Eureka client and the server by registering the Eureka Client to the server.
 
+
+
