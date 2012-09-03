@@ -39,6 +39,6 @@ The Application Service registers with the Eureka Server and the Application cli
 #Running the Demo
 
 * Switch to eureka-server directory and run ./runservice.sh
-* Wait until you see the message _ Service started and ready to process requests._
+* Wait until you see the message _Service started and ready to process requests_.
 * Switch to eureka-client directory and run ./runclient.sh
-* You should see the message _Received response from server. Communication all fine using Eureka_ 
+* You should see the message _Received response from server. Communication all fine using Eureka._ 
