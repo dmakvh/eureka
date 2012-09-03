@@ -21,8 +21,8 @@
     </pre></code> 
 
 * You can find the following artifacts 
-     * Eureka Server WAR archive (./eureka-server/build/libs/eureka-server-XXX-SNAPSHOT.war )
-     * Eureka Client (./eureka-client/build/libs/eureka-client-XXX-SNAPSHOT.jar )
+     * Eureka Server WAR archive (./eureka-server/build/libs/eureka-server-XXX.war )
+     * Eureka Client (./eureka-client/build/libs/eureka-client-XXX.jar )
      * Dependencies (./eureka-server/testlibs/) (If you do not want to use maven to download dependencies 
         you can use these archives)
 
