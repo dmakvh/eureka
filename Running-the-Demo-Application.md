@@ -26,7 +26,7 @@ The Application Service registers with the Eureka Server and the Application cli
     cp ./eureka-server/build/libs/eureka-server-XXX-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war
     </pre></code> 
 
-* Start your tomcat server. Access _**http://localhost:<port>/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
+* Start your tomcat server. Access _**http://localhost:80/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
 
 #Eureka Client Configuration for Application Service
 
