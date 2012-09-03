@@ -28,7 +28,11 @@ The Eureka client interacts with the server the following ways
 
 ## Register
 
-Eureka client registers the information about the running instance to the Eureka server. In AWS Cloud, the information about an instance is available by accessing the URL _http://169.254.169.254/latest/metadata_.
+Eureka client registers the information about the running instance to the Eureka server. In AWS Cloud, the information about an instance is available by accessing the URL _http://169.254.169.254/latest/metadata_.Registration happens on first heartbeat (after 30 seconds).
+
+## Renews
+
+Eureka client needs to renew the lease by sending heartbeats every 30 seconds. The renews inform the Eureka server that the instance is still alive.
 
            
 
