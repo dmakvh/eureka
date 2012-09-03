@@ -1,6 +1,6 @@
 Hopefully, at this point you have visited [this](https://github.com/Netflix/eureka/wiki/Getting-started-with-Eureka) page to understand how to setup the Eureka server.
 
-The first step to interact with Eureka Server is to initialize the Eureka Client.If you are running in the AWS Cloud, you initialize the following way
+The first step to interact with Eureka Server is to initialize the Eureka Client. If you are running in the AWS Cloud, you initialize the following way
 
 <pre>
 <code>
@@ -32,12 +32,13 @@ Eureka client registers the information about the running instance to the Eureka
 
 ## Renew
 
-Eureka client needs to renew the lease by sending heartbeats every 30 seconds. The renews inform the Eureka server that the instance is still alive. If the server hasn't seen the renew for 90 seconds, it removes the instance out of it's registry. It is advisable not to change the renewal interval since the server uses that information to determine if there is a wide-spread problem with the client to server communication.
+Eureka client needs to renew the lease by sending heartbeats every 30 seconds. The renews inform the Eureka server that the instance is still alive. If the server hasn't seen the renew for 90 seconds, it removes the instance out of it's registry. It is advisable not to change the renewal interval since the server uses that information to determine if there is a wide spread problem with the client to server communication.
 
 ## Fetch Registry
 
 Eureka clients fetches the registry information from the server and caches it locally. After that, the clients use that information to find other services. This information is updated periodically (every 30 seconds) by getting the delta updates between the last fetch cycle and the current one. The delta holds information longer (for about 3 mins), hence the delta fetches may return the same instances again. The Eureka client automatically handles the duplicate information.
 
+After getting the deltas, Eureka client reconciles the information with the server by comparing the instance counts returned by the server and if the information does not match for some reason, the whole registry information is fetched again. Eureka server caches the compressed payload of the deltas, whole registry and  also per application apart from the uncompressed information of the same. The payload also supports both JSON/XML formats. Eureka client gets the information in compressed JSON format using jersey apache client.  
 
 
            
