@@ -30,9 +30,15 @@ The Eureka client interacts with the server the following ways
 
 Eureka client registers the information about the running instance to the Eureka server. In AWS Cloud, the information about an instance is available by accessing the URL _http://169.254.169.254/latest/metadata_.Registration happens on first heartbeat (after 30 seconds).
 
-## Renews
+## Renew
 
-Eureka client needs to renew the lease by sending heartbeats every 30 seconds. The renews inform the Eureka server that the instance is still alive.
+Eureka client needs to renew the lease by sending heartbeats every 30 seconds. The renews inform the Eureka server that the instance is still alive. If the server hasn't seen the renew for 90 seconds, it removes the instance out of it's registry. It is advisable not to change the renewal interval since the server uses that information to determine if there is a wide-spread problem with the client to server communication.
+
+## Fetch Registry
+
+Eureka clients fetches the registry information from the server and caches it locally. After that, the clients use that information to find other services. This information is updated periodically (every 30 seconds) by getting the delta updates between the last fetch cycle and the current one. The delta holds information longer (for about 3 mins), hence the delta fetches may return the same instances again. The Eureka client automatically handles the duplicate information.
+
+
 
            
 
