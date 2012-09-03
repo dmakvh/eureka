@@ -40,7 +40,30 @@ At Netflix, we also use the **OUT_OF_SERVICE** status primarily for taking an in
 
 ## Eureka Client Operations
 
-Eureka client first tries to talk to the Eureka Server in the same zone in the AWS cloud for all operations and if it cannot find the server it fails over to the other zones.
+Eureka client first tries to talk to the Eureka Server in the same zone in the AWS cloud for all operations and if it cannot find the server it fails over to the other zones. 
+
+The application clients can load balance by using the information returned by Eureka clients. Following is an example of a jersey apache client using the information returned by Eureka client to load balance the client.
+
+<pre>
+<code>
+ InstanceInfo nextServerInfo = DiscoveryManager.getInstance()
+                .getDiscoveryClient()
+                .getNextServerFromEureka(vipAddress, false);
+
+        Socket s = new Socket();
+        int serverPort = nextServerInfo.getPort();
+        try {
+            s.connect(new InetSocketAddress(nextServerInfo.getHostName(),
+                    serverPort));
+        } catch (IOException e) {
+            System.err.println("Could not connect to the server :"
+                    + nextServerInfo.getHostName() + " at port " + serverPort);
+        }
+</code>
+</pre>
+
+If the basic round-robin load balancing is not sufficient for your needs, you can create one for yourself and many of the [operations](http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/discovery/DiscoveryClient.html) from Eureka Clients would come in handy in that situation.
+
 
 The Eureka client interacts with the server the following ways
 
@@ -72,7 +95,7 @@ This is done when the Eureka client shuts down and the application should make s
 
 ## Time Lag
 
-All operations from Eureka client may take some time to reflect on the Eureka servers and subsequently on other Eureka clients. This is because
+All operations from Eureka client may take some time to reflect on the Eureka servers and subsequently in other Eureka clients. This is because of the caching of the payload on the eureka server which happens periodically to reflect the new data. The Eureka clients also fetch the delta periodically.
            
 
 
