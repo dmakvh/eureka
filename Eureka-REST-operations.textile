@@ -4,21 +4,22 @@ Following are the REST operations available for non-java applications to use Eur
 
 
 | *Operation* | *HTTP action* | *Description* |
-| Register new application instance | POST /eureka/v2/apps/appID | Input: JSON/XML payload HTTP Code: 200 on success |
-| De-register application instance | DELETE /eureka/v2/apps/appID/instanceID | HTTP Code: 200 on success |
-| Send application instance heartbeat | PUT /eureka/v2/apps/appID/instanceID | HTTP Code:
+| Register new application instance | POST /eureka/v2/apps/**appID** | Input: JSON/XML payload HTTP Code: 200 on success |
+| De-register application instance | DELETE /eureka/v2/apps/**appID**/**instanceID** | HTTP Code: 200 on success |
+| Send application instance heartbeat | PUT /eureka/v2/apps/**appID**/**instanceID** | HTTP Code:
 * 200 on success
-* 404 if instanceID doesn't exist |
+* 404 if **instanceID** doesn't exist |
 | Query for all instances | GET /eureka/v2/apps | HTTP Code: 200 on success Output: JSON/XML|
-| Query for all appID instances | GET /eureka/v2/apps/appID | HTTP Code: 200 on success Output: JSON/XML |
-| Query for a specific appID/instanceID | GET /eureka/v2/apps/appID/instanceID | HTTP Code: 200 on success Output: JSON/XML|
-| Query for a specific instanceID | GET /eureka/v2/instances/instanceID | HTTP Code: 200 on success Output: JSON/XML|
-| Take instance "out of service" | PUT /eureka/v2/apps/appID/instanceID/status?value=OUT_OF_SERVICE| HTTP Code:
+| Query for all **appID** instances | GET /eureka/v2/apps/**appID** | HTTP Code: 200 on success Output: JSON/XML |
+| Query for a specific **appID**/**instanceID** | GET /eureka/v2/apps/**appID**/**instanceID** | HTTP Code: 200 on success Output: JSON/XML|
+| Query for a specific **instanceID** | GET /eureka/v2/instances/**instanceID** | HTTP Code: 200 on success Output: JSON/XML|
+| Take instance "out of service" | PUT /eureka/v2/apps/**appID**/**instanceID**/status?value=OUT_OF_SERVICE| HTTP Code:
 * 200 on success
 * 500 on failure |
-| Put instance back into service | PUT /eureka/v2/apps/appID/instanceID/status?value=UP | HTTP Code:
+| Put instance back into service | PUT /eureka/v2/apps/**appID**/**instanceID**/status?value=UP | HTTP Code:
 * 200 on success
 * 500 on failure |
+
 
 
 **REGISTER**
