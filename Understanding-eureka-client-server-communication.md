@@ -66,7 +66,6 @@ If the basic round-robin load balancing is not sufficient for your needs, you ca
 
 It is important to note that Eureka client cleans up the HTTP connections that has been idle for over 30 seconds, that it created for the purpose for server communication. It is because of the AWS firewall restrictions do not allow traffic to pass through after a few minutes of idle time.
 
-
 The Eureka client interacts with the server the following ways
 
 ## Register
@@ -98,7 +97,4 @@ This is done when the Eureka client shuts down and the application should make s
 ## Time Lag
 
 All operations from Eureka client may take some time to reflect on the Eureka servers and subsequently in other Eureka clients. This is because of the caching of the payload on the eureka server which happens periodically to reflect the new data. The Eureka clients also fetch the delta periodically. Hence, it may take up to 2 mins for the changes for all Eureka clients to know the changes.
-           
-
-
-
+  
