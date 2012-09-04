@@ -1,8 +1,7 @@
 
-
 | *Operation* | *HTTP action* | *Notes* |
 | Register new application instance | POST /discovery/v2/apps/appID | Input: JSON/XML payload HTTP Code: 200 on success |
- De-register application instance | DELETE /discovery/v2/apps/appID/instanceID | HTTP Code: 200 on success |
+| De-register application instance | DELETE /discovery/v2/apps/appID/instanceID | HTTP Code: 200 on success |
 | Send application instance heartbeat | PUT /discovery/v2/apps/appID/instanceID | HTTP Code:
 * 200 on success
 * 205 if any direct dependencies changed
