@@ -62,7 +62,7 @@ The application clients can load balance by using the information returned by Eu
 </code>
 </pre>
 
-If the basic round-robin load balancing is not sufficient for your needs, you can create one for yourself and many of the [operations](http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/discovery/DiscoveryClient.html) from Eureka Clients would come in handy in that situation.
+If the basic round-robin load balancing is not sufficient for your needs, you can create one for yourself and many of the [operations](http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/discovery/DiscoveryClient.html) here would come in handy.In AWS cloud, make sure you retry on failures and keep the timeouts low, because there could be scenarios where Eureka server could return instances that no longer exists incase of outages.
 
 
 The Eureka client interacts with the server the following ways
