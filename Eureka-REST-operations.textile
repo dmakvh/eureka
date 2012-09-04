@@ -115,7 +115,7 @@ When you register, you'll need to post an XML (or JSON) body that conforms to th
 </xsd:schema>
 ```
 
-RENEW
+**RENEW**
 
 Example : PUT /eureka/v2/apps/MYAPP/i-6589ef6
 
@@ -124,7 +124,7 @@ Response:
           404 (eureka doesn't know about you, Register yourself first)
           500 (failure)
 
-CANCEL
+**CANCEL**
 
 (If Eureka doesn't get heartbeats from the service node within the evictionDurationInSecs, then the node will get automatically de-registered ):
 Example : DELETE /eureka/v2/apps/MYAPP/i-6589ef6
