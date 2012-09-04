@@ -97,4 +97,7 @@ This is done when the Eureka client shuts down and the application should make s
 ## Time Lag
 
 All operations from Eureka client may take some time to reflect on the Eureka servers and subsequently in other Eureka clients. This is because of the caching of the payload on the eureka server which is refreshed periodically to reflect new information. Eureka clients also fetch the delta periodically. Hence, it may take up to 2 mins for the changes for all Eureka clients to know the changes.
-  
+
+## Communication mechanism
+
+By default, Eureka clients use [Jersey](http://jersey.java.net/) and [XStream](http://xstream.codehaus.org/)  along with JSON payload to communicate with Eureka Server. You can always use a mechanism of your choice by [overriding](http://netflix.github.com/eureka/javadoc/eureka-client/index.html) the default one.
