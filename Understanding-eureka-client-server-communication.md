@@ -42,7 +42,7 @@ At Netflix, we also use the **OUT_OF_SERVICE** status primarily for taking an in
 
 Eureka client first tries to talk to the Eureka Server in the same zone in the AWS cloud for all operations and if it cannot find the server it fails over to the other zones. 
 
-The application clients can load balance by using the information returned by Eureka clients. Following is an example of a jersey apache client using the information returned by Eureka client to load balance the client.
+The application clients can load balance by using the information returned by Eureka clients. Following is an example of the sample application using the information returned by Eureka client to load balance the client.
 
 <pre>
 <code>
@@ -62,7 +62,9 @@ The application clients can load balance by using the information returned by Eu
 </code>
 </pre>
 
-If the basic round-robin load balancing is not sufficient for your needs, you can create one for yourself and many of the [operations](http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/discovery/DiscoveryClient.html) here would come in handy.In AWS cloud, make sure you retry on failures and keep the timeouts low, because there could be scenarios where Eureka server could return instances that no longer exists incase of outages.
+If the basic round-robin load balancing is not sufficient for your needs, you can wrap a load balancer on top of the [operations](http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/discovery/DiscoveryClient.html) provided here.In AWS cloud, make sure you retry on failures and keep the timeouts low, because there could be scenarios where Eureka server could return instances that no longer exists incase of outages.
+
+It is important to note that Eureka client cleans up the HTTP connections that has been idle for over 30 seconds, that it created for the purpose for server communication. It is because of the AWS firewall restrictions do not allow traffic to pass through after a few minutes of idle time.
 
 
 The Eureka client interacts with the server the following ways
