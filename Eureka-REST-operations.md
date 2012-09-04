@@ -1,3 +1,7 @@
+Following are the REST operations available for non-java applications to use Eureka
+
+**<appID>** is the name of the application and **<instanceID>** is the unique id associated with the instance. In AWS cloud, <instanceID> is the **instance id** of the instance and in other data centers, it is the **hostname** of the instance.
+
 | *Operation* | *HTTP action* | *Description* |
 | Register new application instance | POST /eureka/v2/apps/<appID> | Input: JSON/XML payload HTTP Code: 200 on success |
 | De-register application instance | DELETE /eureka/v2/apps/<appID>/<instanceID> | HTTP Code: 200 on success |
@@ -16,7 +20,7 @@
 * 500 on failure |
 
 
-Register - XSD
+## Register 
 
 When you register, you'll need to post an XML (or JSON) body that conforms to this XSD:
 
@@ -109,3 +113,20 @@ When you register, you'll need to post an XML (or JSON) body that conforms to th
 
 </xsd:schema>
 ```
+
+## Renew
+
+Example : PUT /eureka/v2/apps/MYAPP/i-6589ef6
+
+Response:
+  Status: 200 (on success)
+          404 (eureka doesn't know about you, Register yourself first)
+          500 (failure)
+
+## Cancel
+
+(If Eureka doesn't get heartbeats from the service node within the evictionDurationInSecs, then the node will get automatically de-registered ):
+Example : DELETE /eureka/v2/apps/MYAPP/i-6589ef6
+Response:
+  Status: 200 (on success)
+          500 (failure)
