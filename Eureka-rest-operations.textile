@@ -1,4 +1,4 @@
 note:* in the following table, instanceID will be the EC2 instance id (e.g. "i-flde9e99"), or hostName if you're running outside of EC2 (i.e. DC / desktop)
 
 | *Operation* | *HTTP action* | *Notes* |
- Register new application instance | POST /discovery/v2/apps/appID | Input: JSON/XML payload HTTP Code: 200 on success |
+ Register new application instance | POST | Input: JSON/XML payload HTTP Code: 200 on success |
