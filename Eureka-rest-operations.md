@@ -1,23 +1,5 @@
-
-Operation	HTTP action	Notes
-Register new application instance	POST /discovery/v2/apps/appID	 Input: JSON/XML payload 
-HTTP Code: 200 on success
-De-register application instance	DELETE /discovery/v2/apps/appID/instanceID	 HTTP Code: 200 on success
-Send application instance heartbeat	PUT /discovery/v2/apps/appID/instanceID	 HTTP Code:
-200 on success
-205 if any direct dependencies changed
-404 if instanceID doesn't exist — platform.jar will automatically register itself.
-Query for all active app instances	GET /discovery/v2/apps	 HTTP Code: 200 on success 
-Output: JSON/XML (example below) — list of lists
-Query for all appID instances	GET /discovery/v2/apps/appID	 HTTP Code: 200 on success 
-Output: JSON/XML (example below) — list
-Query for a specific appID/instanceID	GET /discovery/v2/apps/appID/instanceID	 HTTP Code: 200 on success 
-Output: JSON/XML (example below)
-Query for a specific instanceID	GET /discovery/v2/instances/instanceID	 HTTP Code: 200 on success 
-Output: JSON/XML (example below) — list
-Take instance "out of service"	PUT  /discovery/v2/apps/appID /instanceID /status?value=OUT_OF_SERVICE	 HTTP Code:
-200 on success
-406 on failure
-Put instance back into service	PUT /discovery/v2/apps/appID /instanceID /status?value=UP	 HTTP Code:
-200 on success
-406 on failure
+{background:#ddd}. |_. Item |_. Status |_. Comments | 
+|<. Import basic libraries from SmartEiffel & ESE |=. *{color:green} 
+DONE* |<. From SmartEiffel we need io, storage, kernel, strings... 
+From ESE we need the parser. | 
+|<. Clean libraries licenses |=. *{color:red}TODO* |<. | 
