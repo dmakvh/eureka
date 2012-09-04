@@ -1,6 +1,5 @@
 Following are the REST operations available for non-java applications to use Eureka
 
-**<appID>** is the name of the application and **<instanceID>** is the unique id associated with the instance. In AWS cloud, <instanceID> is the **instance id** of the instance and in other data centers, it is the **hostname** of the instance.
 
 | *Operation* | *HTTP action* | *Description* |
 | Register new application instance | POST /eureka/v2/apps/<appID> | Input: JSON/XML payload HTTP Code: 200 on success |
