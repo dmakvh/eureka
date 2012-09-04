@@ -1,4 +1,4 @@
-Following are the REST operations available for non-java applications to use Eureka
+Following are the REST operations available for non-java applications to use Eureka.
 
 **<appID>** is the name of the application and **<instanceID>** is the unique id associated with the instance. In AWS cloud, <instanceID> is the **instance id** of the instance and in other data centers, it is the **hostname** of the instance.
 
@@ -21,7 +21,7 @@ Following are the REST operations available for non-java applications to use Eur
 * 500 on failure |
 
 
-REGISTER
+**REGISTER**
 
 When you register, you'll need to post an XML (or JSON) body that conforms to this XSD:
 
