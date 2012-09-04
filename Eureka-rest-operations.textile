@@ -1,4 +1,4 @@
 note:* in the following table, instanceID will be the EC2 instance id (e.g. "i-flde9e99"), or hostName if you're running outside of EC2 (i.e. DC / desktop)
 
-| *Name* | *Description* | *Default value* |
+| *Operation* | *HTTP action* | *Notes* |
 | archaius.configurationSource.defaultFileName | the default configuration file name on classpath | config.properties |
