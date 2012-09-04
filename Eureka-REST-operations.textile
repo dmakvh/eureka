@@ -19,7 +19,9 @@
 Register - XSD
 
 When you register, you'll need to post an XML (or JSON) body that conforms to this XSD:
-{code}<?xml version="1.0" encoding="UTF-8"?>
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="<a class="jive-link-external-small" href="http://www.w3.org/2001/XMLSchema" target="_blank">http://www.w3.org/2001/XMLSchema</a>" elementFormDefault="qualified" attributeFormDefault="unqualified">
     <xsd:element name="instance">
         <xsd:complexType>
@@ -106,3 +108,4 @@ When you register, you'll need to post an XML (or JSON) body that conforms to th
     </xsd:complexType>
 
 </xsd:schema>
+```
