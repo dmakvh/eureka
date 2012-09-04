@@ -54,7 +54,7 @@ txt.us-east-1e.mydomaintest.netflix.net=http://ec2-50-179-285-592.compute-1.amaz
 </code>
 </pre>
 
-And then you specify the following properties in the Eureka Server _(eureka-client.properties_) and all the Eureka clients for them to be able to look up DNS and find the information necessary for communication.
+And then you specify the following properties in the Eureka Server _(eureka-client.properties_) and also in all the Eureka clients for them to be able to look up DNS and find the information necessary for communication.
 
 <pre>
 <code>
