@@ -30,7 +30,7 @@ You have the following choices to get the Eureka client binaries
  <dependency>
   <groupId>com.netflix.eureka</groupId>
   <artifactId>eureka-client</artifactId>
-  <version>1.1.4</version>
+  <version>1.1.7</version>
  </dependency>
 ```
 * You can build the client as specified [here](https://github.com/Netflix/eureka/wiki/Building-Eureka-Client-and-Server).
