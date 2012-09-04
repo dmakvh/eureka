@@ -34,7 +34,7 @@ The same configuration is then included with Eureka clients that register with E
 
 If you are looking for flexibility, you should configure Eureka service URLs using DNS.
 
-You first configure a DNS name for region that can be used to find the list of available zones. Since, using  DNS you can find only one CNAME for a DNS name, we use the TXT records to find a list of comma delimited DNS name. 
+You first configure a DNS name for region that can be used to find the list of available zones. Since, using  DNS you can find only one CNAME for a DNS name, we use the TXT records to find a list of comma delimited DNS names. 
 
 For instance, following is a DNS TXT record created in the DNS server that lists the set of available DNS names for a zones.
 
