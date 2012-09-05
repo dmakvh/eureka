@@ -13,3 +13,14 @@ In the case, where the server is not able get the registry information from the 
 Eureka servers communicate with one another using the same mechanism used between the Eureka client and the server as described [here](https://github.com/Netflix/eureka/wiki/Understanding-eureka-client-server-communication).
 
 Also worth noting is that there are several [configurations](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html) that can be tuned on the server including the communication between the servers if needed.
+
+## What happens during network outages between Peers?
+
+In the case of network outages between peers, following things may happen
+
+* The heartbeat replications between peers may fail and the server detects this situation and enters into a self-preservation mode protecting the current state.
+* Registrations may happen in an orphaned server and some clients may reflect new registrations while the others may not.
+*  The situation autocorrects itself after the network connectivity is restored to a stable state. When the peers are able to communicate fine, the registration information is automatically transferred to the servers that do not have them.
+
+The bottom line is, during the network outages, the server tries to be as resilient as possible, but there is a possibility of clients having different views of the servers during that time.
+  
