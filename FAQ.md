@@ -1,6 +1,6 @@
 ## What happens during network outages between Peers?
 
-In the case of network outages between peers, following things may happen
+In the case of network outages between peers, following things may happen.
 
 The heartbeat replications between peers may fail and the server detects this situation and enters into a self-preservation mode protecting the current state.
 Registrations may happen in an orphaned server and some clients may reflect new registrations while the others may not.
@@ -19,3 +19,18 @@ of the mid-tier services are non-sticky in our scenario, we don't have a reason 
 our clients fairly resilient to Eureka server outages , since the client has all the information to contact the services it needs to talk to. Going through HA Proxy has a disadvantage in
 that, you cannot be resilient to proxy outages.
 
+
+## Why not use Curator/Zookeeper as a service registry? 
+
+There are some overlaps in certain areas of what Zookeeper and Eureka provides especially in the areas of replicating registry information. Eureka could use zookeeper to cache registry information and replicate the same, but replication is just a little part of what Eureka provides. Eureka has been built specifically not to depend on any other external component primarily
+
+1) To reduce the complexity
+2) Avert an other failure point
+
+Zookeeper just as a replication registry with Eureka increases complexity because 
+
+1) You will have to now find a way to assign EIPS to zookeeper similar to eureka
+2) Deal with failures when zookeeper fails.
+
+
+ Zookeeper 's biggest selling points are leader election, ordered updates, distributed synchronization along with its consistency guarantees. Since, none of these really apply to Eureka, the extra complexity is unwarranted.
