@@ -5,4 +5,5 @@
 * [[Configuring Eureka in AWS Cloud]]
 * [[Understanding Eureka Client/Server Communication]]
 * [[Eureka REST operations]]
+* [[FAQ]]
 * [[Understanding Eureka Peer to Peer communication]]
