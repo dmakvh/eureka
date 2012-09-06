@@ -22,15 +22,23 @@ that, you cannot be resilient to proxy outages.
 
 ## Why not use Curator/Zookeeper as a service registry? 
 
-There are some overlaps in certain areas of what Zookeeper and Eureka provides especially in the areas of replicating registry information. Eureka could use zookeeper to cache registry information and replicate the same, but replication is just a little part of what Eureka provides. Eureka has been built specifically not to depend on any other external component primarily
+There are some overlaps in certain areas of what Zookeeper and Eureka provides especially in the areas of replicating registry information. Eureka could use zookeeper to cache registry information and replicate the same, but replication is just a little part of what Eureka provides. 
 
-1) To reduce the complexity
-2) Avert an other failure point
+Eureka deals with various other things apart from replication.
 
-Zookeeper just as a replication registry with Eureka increases complexity because 
+* REST end points that deal with registrations, renewals, expirations and cancels. 
+* Keeping the instance information up-to-date dealing with the intricacies of EIP binding, deployment rollbacks, autoscaling in a resilient manner.
+* Be resilient to network outages between clients and servers and between peers.
 
-1) You will have to now find a way to assign EIPS to zookeeper similar to eureka
-2) Deal with failures when zookeeper fails.
+Zookeeper's power comes to the fore with leader election, ordered updates, distributed synchronization along with its consistency guarantees (quorums). 
 
+None of the above except the replication registry really applies to Eureka to justify an other dependency that we have to deal with the following complications
 
- Zookeeper 's biggest selling points are leader election, ordered updates, distributed synchronization along with its consistency guarantees. Since, none of these really apply to Eureka, the extra complexity is unwarranted.
+* You will have to now find a way to assign EIPs to zookeeper similar to eureka
+* Deal with failures when zookeeper fails.
+
+And further more, Eureka has been built carefully without any hard dependency on any external components  
+
+* Most services rely on Eureka to bootstrap themselves
+* To reduce the complexity
+* Avert an other failure point
