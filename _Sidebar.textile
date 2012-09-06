@@ -6,5 +6,6 @@
 * [[Understanding Eureka Client/Server Communication]]
 * [[Eureka REST operations]]
 * [[Understanding Eureka Peer to Peer communication]]
+* [[FAQ]]
 * "Javadoc-Eureka Client":http://netflix.github.com/eureka/javadoc/eureka-client/index.html
 * "Javadoc-Eureka Server":http://netflix.github.com/eureka/javadoc/eureka-core/index.html
