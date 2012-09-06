@@ -84,7 +84,7 @@ After getting the deltas, Eureka client reconciles the information with the serv
 
 ## Cancel
 
-Eureka client sends a cancel request to server on shutdown. This effectively removes the instance from the server's instance registry there by effectively taking the instance out for traffic.
+Eureka client sends a cancel request to server on shutdown. This removes the instance from the server's instance registry there by effectively taking the instance out for traffic.
 
 This is done when the Eureka client shuts down and the application should make sure to call the following during its shutdown.
 
