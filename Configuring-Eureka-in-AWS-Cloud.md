@@ -48,7 +48,7 @@ Then, you can define TXT records recursively for each zone similar to the follow
 
 <pre>
 <code>
-txt.us-east-1a.mydomaintest.netflix.net=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
+txt.us-east-1c.mydomaintest.netflix.net=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
 txt.us-east-1d.mydomaintest.netflix.net=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/
 txt.us-east-1e.mydomaintest.netflix.net=http://ec2-50-179-285-592.compute-1.amazonaws.com:7001/discovery/v2/
 </code>
