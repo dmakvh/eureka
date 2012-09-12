@@ -6,4 +6,5 @@
 * [[Understanding Eureka Client/Server Communication]]
 * [[Eureka REST operations]]
 * [[Understanding Eureka Peer to Peer communication]]
+* [[Overriding Default Configurations]]
 * [[FAQ]]
