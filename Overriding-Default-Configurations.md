@@ -7,3 +7,5 @@ You can extend the following default configuration classes to provide your own c
 * [Cloud](https://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/appinfo/CloudInstanceConfig.java) or [Datacenter](https://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/appinfo/MyDataCenterInstanceConfig.java) Instance Configuration 
 * [Eureka Client](https://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/discovery/DefaultEurekaClientConfig.java) Configuration
 * [Eureka Server](https://github.com/Netflix/eureka/blob/master/eureka-core/src/main/java/com/netflix/eureka/DefaultEurekaServerConfig.java) Configuration 
+
+Note that the above also serves as the documentation of default configuration values for all of the above configurations available with Eureka.
