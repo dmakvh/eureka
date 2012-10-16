@@ -81,16 +81,14 @@ After configuring the Eureka Client, you may need to configure the Eureka Server
 For AWS environments, you may want to specify the following properties, primarily used for binding the EIPs.
     <pre><code> 
    eureka.awsAccessId=
-  eureka.awsSecretKey=
+   eureka.awsSecretKey=
    </pre></code> 
 
-[This](https://github.com/Netflix/eureka/wiki/Configuring-Eureka-in-AWS-Cloud) document explains the AWS-specific eureka server configuration in detail.
+For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html).
 
 If you are [building](https://github.com/Netflix/eureka/wiki/Building-Eureka-Client-and-Server) the WAR archive, you can edit the files under _eureka-server/conf_ in place and the build takes care of placing the properties files under WEB-INF/classes before creating the archive.
 
 If you are [downloading]("http://search.maven.org/#search%7Cga%7C1%7Ceureka-server" ) the archive from maven, then you can merge in the edited property files under WEB-INF/classes yourself.
-
-For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html).
 
 [Running](https://github.com/Netflix/eureka/wiki/Running-the-Demo-Application) the demo application may help you to understand the configurations better.
 
