@@ -84,7 +84,7 @@ For AWS environments, you may want to specify the following properties, primaril
    eureka.awsSecretKey=
    </pre></code> 
 
-For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html).
+More details on AWS-specific configurations is explained [here](https://github.com/Netflix/eureka/wiki/Configuring-Eureka-in-AWS-Cloud). For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html). 
 
 If you are [building](https://github.com/Netflix/eureka/wiki/Building-Eureka-Client-and-Server) the WAR archive, you can edit the files under _eureka-server/conf_ in place and the build takes care of placing the properties files under WEB-INF/classes before creating the archive.
 
