@@ -16,7 +16,7 @@ Example: eureka.healthCheckUrlPath=/myapp/healthCheck.jsp
 
 If the secure port is enabled (eureka.securePort.enabled=true), _HTTPS_ is used as a preferred communication protocol, otherwise HTTP is assumed.
 
-* By specifying a full healthcheck URL  given by the property below
+* By specifying a full healthcheck URL  given one of the properties below
 
 <pre>
 eureka.healthCheckUrl
@@ -26,4 +26,19 @@ Example:eureka.healthCheckUrl=http://${eureka.hostname}:8080/Priam/REST/healthch
 Example:eureka.secureHealthCheckUrl=https://${eureka.hostname}:8088/Priam/REST/healthcheck
 </pre>
 
-The expression _${eureka.hostname}_ is automatically evaluated by Eureka client to supply the appropriate host name. This option may be needed in the case if the eureka client is servicing as proxy to some other non-java service where the running port is different from the p
+The expression _${eureka.hostname}_ is automatically evaluated by Eureka client to supply the appropriate host name.
+
+**Other integration points**
+
+Asgard can also link other URLs from eureka for its status and home page URLs when the following properties are specified.
+
+<pre>
+eureka.homePageUrl
+eureka.homePageUrlPath
+eureka.statusPageUrl
+eureka.statusPageUrlPath
+</pre>
+
+**A note about old/new version deployment**
+
+Another very useful integration point between Eureka and Asgard is for supporting Asgard clusters. Asgard clusters provide a way to run different versions of your deployment and allows to switch between them seamlessly in case of problems. This is especially useful in DR scenarios when the rollback of the entire farm can take quite a long time. Once Asgard is configured to use eureka, the users do not have anything special to get
