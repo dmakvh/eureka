@@ -14,7 +14,7 @@ eureka.healthCheckUrlPath
 Example: eureka.healthCheckUrlPath=/myapp/healthCheck.jsp
 </pre>
 
-If the secure port is enabled (eureka.securePort.enabled=true), _HTTPS_ is used as a preferred communication protocol, otherwise HTTP is assumed.
+If the secure port is enabled (eureka.securePort.enabled=true), _HTTPS_  is used as a preferred communication protocol, otherwise HTTP is assumed.
 
 * By specifying a full healthcheck URL  given one of the properties below
 
