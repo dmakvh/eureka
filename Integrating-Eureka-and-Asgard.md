@@ -1,8 +1,8 @@
-[Asgard](https://github.com/Netflix/asgard) the web based cloud deployment tool can be used with Eureka to mitigate problems during a rolling deployment in a AWS [autoscaling group](http://aws.amazon.com/autoscaling/) and for seamlessly switching between old and new deployments.
+[Asgard](https://github.com/Netflix/asgard) the web based cloud deployment tool can be used with Eureka to mitigate problems during a rolling deployment in a AWS [auto scaling group](http://aws.amazon.com/autoscaling/) and for seamlessly switching between old and new deployments.
 
 **Rolling Deployment**
 
-During a rolling deployment, Asgard can check for the health of an instance before propagating the new version to all of the instances in an ASG(Autoscaling group). This is a useful risk mitigation strategy for preventing outages if the new version has problems for some reason. 
+During a rolling deployment, Asgard can check for the health of an instance before propagating the new version to all of the instances in an ASG (Auto Scaling group). This is a useful risk mitigation strategy for preventing outages if the new version has problems for some reason. 
 
 To use this feature, eureka clients are required to register a _health check URL_.This can be done in 2 ways
 
@@ -41,4 +41,4 @@ eureka.statusPageUrlPath
 
 **A note about old/new version deployment**
 
-Another very useful integration point between Eureka and Asgard is for supporting Asgard clusters. Asgard clusters provide a way to run different versions of your deployment and allows to switch between them seamlessly in case of problems. This is especially useful in DR scenarios when the rollback of the entire farm can take quite a long time. Once Asgard is configured to use eureka, the users do not have anything special to get this feature.
+Another very useful integration point between Eureka and Asgard is for supporting Asgard clusters. Asgard clusters provide a way to run different versions of your deployment and allows switching traffic between them seamlessly in case of problems. This is especially useful in disaster recovery scenarios when the rollback of the entire farm can take quite a long time. Once Asgard is configured to use Eureka, the users do not need to do anything special to get this feature.
