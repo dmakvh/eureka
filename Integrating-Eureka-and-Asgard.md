@@ -41,4 +41,4 @@ eureka.statusPageUrlPath
 
 **A note about old/new version deployment**
 
-Another very useful integration point between Eureka and Asgard is for supporting Asgard clusters. Asgard clusters provide a way to run different versions of your deployment and allows to switch between them seamlessly in case of problems. This is especially useful in DR scenarios when the rollback of the entire farm can take quite a long time. Once Asgard is configured to use eureka, the users do not have anything special to get
+Another very useful integration point between Eureka and Asgard is for supporting Asgard clusters. Asgard clusters provide a way to run different versions of your deployment and allows to switch between them seamlessly in case of problems. This is especially useful in DR scenarios when the rollback of the entire farm can take quite a long time. Once Asgard is configured to use eureka, the users do not have anything special to get this feature.
