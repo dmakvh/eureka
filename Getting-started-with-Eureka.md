@@ -21,7 +21,7 @@ Eureka can be run in both the AWS and the non-AWS environments.
 
 * JDK 1.6 or higher
 
-You have the following choices to get the Eureka client binaries
+You have the following choices to get the Eureka client binaries. Always try to get the latest release as tend to have more fixes.
 
 * You can download the Eureka Client binary by using this URL "http://search.maven.org/#search%7Cga%7C1%7Ceureka-client"
 
