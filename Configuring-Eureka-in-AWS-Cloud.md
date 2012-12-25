@@ -59,9 +59,9 @@ And then you specify the following properties in the Eureka Server _(eureka-clie
 <pre>
 <code>
 eureka.shouldUseDns=true
-eureka.domainName=mydomaintest.netflix.net
-eureka.port=7001
-eureka.context=eureka/v2
+eureka.eurekaServer.domainName=mydomaintest.netflix.net
+eureka.eurekaServer.port=7001
+eureka.eurekaServer.context=eureka/v2
 </code>
 </pre>
 
