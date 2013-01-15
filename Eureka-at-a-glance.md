@@ -4,7 +4,7 @@ Eureka is a REST (Representational State Transfer) based service that is primari
 
 ## What is the need for Eureka?
 
-In AWS cloud, because of it's inherent nature, servers come and go. Unlike the traditional load balancers which work with servers with well known ip addresses and host names, in AWS, load balancing requires much more sophistication in registering and de-registering servers with load balancer on the fly. Since, AWS does not yet provide a middle tier load balancer, Eureka fills a big gap in the area of mid-tier load balancing.
+In AWS cloud, because of its inherent nature, servers come and go. Unlike the traditional load balancers which work with servers with well known ip addresses and host names, in AWS, load balancing requires much more sophistication in registering and de-registering servers with load balancer on the fly. Since, AWS does not yet provide a middle tier load balancer, Eureka fills a big gap in the area of mid-tier load balancing.
 
 ## How different is Eureka from AWS ELB?
 
