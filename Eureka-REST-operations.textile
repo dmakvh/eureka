@@ -20,6 +20,9 @@ For JSON/XML, the content types supplied must be **application/xml** or **applic
 | Put instance back into service | PUT /eureka/v2/apps/**appID**/**instanceID**/status?value=UP | HTTP Code:
 * 200 on success
 * 500 on failure |
+| Update metadata | PUT /eureka/v2/apps/**appID**/**instanceID**/metadata?key=value| HTTP Code:
+* 200 on success
+* 500 on failure |
 
 
 
