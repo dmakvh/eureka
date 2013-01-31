@@ -77,3 +77,7 @@ Eureka server finds an EIP based on which zone it is launched. It then tries to 
 How does Eureka find unused EIPs? It uses the Eureka client to find the list of peer instances and see what EIPS they are bound with and picks the one that is not bound.It prefers to find the EIP assigned to its zone , so that the Eureka clients of the all the other instances in the zone can talk to Eureka server that are co-located in the same zone. If the Eureka server cannot find any EIPS free for it's zone, it tries the EIPs assigned from other zones.If all of them are bound, then the Eureka server starts up and waits for an EIP to get free and tries every 5 mins to bind the EIP.
 
 The Eureka clients similarly try to find a Eureka server co-located in the same zone and if it does not find any, it fails over to the Eureka servers in the other zones.
+
+##Eureka Cloud Command line properties
+
+In the AWS cloud environment, pass in the java commandline property **-Deureka.datacenter=cloud** so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.
