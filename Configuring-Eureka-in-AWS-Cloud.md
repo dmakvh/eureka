@@ -78,9 +78,19 @@ How does Eureka find unused EIPs? It uses the Eureka client to find the list of 
 
 The Eureka clients similarly try to find a Eureka server co-located in the same zone and if it does not find any, it fails over to the Eureka servers in the other zones.
 
-##Eureka Cloud Command line properties
+##Eureka AWS-specific properties
 
 In the AWS cloud environment, pass in the java commandline property **-Deureka.datacenter=cloud** so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.
+
+You will need to provide the AWS access id and key in your eureka server configuration.
+
+    <pre>
+   <code> 
+   eureka.awsAccessId=
+   eureka.awsSecretKey=
+</code> 
+
+   </pre>
 
 ##AWS access policies
 
