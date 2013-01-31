@@ -81,3 +81,36 @@ The Eureka clients similarly try to find a Eureka server co-located in the same 
 ##Eureka Cloud Command line properties
 
 In the AWS cloud environment, pass in the java commandline property **-Deureka.datacenter=cloud** so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.
+
+##AWS access policies
+
+Eureka tries to query ASG related information so that it can make sure the launched instances are automatically **OUT_OF_SERVICE** or **UP** depending on the value of "addToLoadbalancer" flag in Autoscaling group properties. It also requires access to bind/unbind EIPs in the cloud. The following is the sample AWS policy that you need to set up for your cloud environment.
+
+
+
+<pre>
+
+Here is the sample policy file I generated using AWS policy generator with all access required. Please let me know if it works and I will update the docs accordingly.
+
+{
+  "Statement": [
+    {
+      "Sid": "Stmt1358974336152",
+      "Action": [
+        "ec2:AssociateAddress",
+        "ec2:DisassociateAddress"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Stmt1358974395291",
+      "Action": [
+        "autoscaling:DescribeAutoScalingGroups"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
+</pre>
