@@ -84,10 +84,10 @@ In the AWS cloud environment, pass in the java commandline property **-Deureka.d
 
 You will need to provide the AWS access id and key in your eureka server configuration.
 
-    <pre>
+<pre>
    eureka.awsAccessId=
    eureka.awsSecretKey=
- </pre>
+</pre>
 
 ##AWS access policies
 
