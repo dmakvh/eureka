@@ -84,13 +84,15 @@ In the AWS cloud environment, pass in the java commandline property **-Deureka.d
 
 ##AWS access policies
 
-Eureka tries to query ASG related information so that it can make sure the launched instances are automatically **OUT_OF_SERVICE** or **UP** depending on the value of "addToLoadbalancer" flag in Autoscaling group properties. It also requires access to bind/unbind EIPs in the cloud. The following is the sample AWS policy that you need to set up for your cloud environment.
-
-
+Eureka tries to query ASG related information so that it can make sure the launched instances are automatically **OUT_OF_SERVICE** or **UP** depending on the value of "addToLoadbalancer" flag in Autoscaling group properties. The property used to determine which ASG you belong to is configured by specifying this property when [configuring](https://github.com/Netflix/eureka/wiki/Getting-started-with-Eureka) the eureka client.
 
 <pre>
+eureka.asgName
+</pre>
 
-Here is the sample policy file I generated using AWS policy generator with all access required. Please let me know if it works and I will update the docs accordingly.
+Eureka server requires access to query the ASG information as well as bind/unbind IPs in the cloud. Hence AWS policy should be configured to allow the above accesses. The following is the sample policy with the accesses required.
+
+<pre>
 
 {
   "Statement": [
