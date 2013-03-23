@@ -8,21 +8,20 @@
 * Install the latest [git](http://git-scm.com/book/en/Getting-Started-Installing-Git) and [gradle](http://gradle.org/installation) packages.
 
 *  Get the Eureka source from github
-   <pre><code> 
-    git init
-    git remote add --track master origin git@github.com:Netflix/eureka.git
-    git pull
-   </pre></code> 
+
+   ```sh
+   git clone https://github.com/Netflix/eureka.git
+   ```
 
 * Now, build the Eureka Server by executing the following in the directory where you pulled your sources.
 
-    <pre><code> 
+    ```sh
+    cd eureka
     ./gradlew clean build
-    </pre></code> 
+    ``` 
 
 * You can find the following artifacts 
      * Eureka Server WAR archive (./eureka-server/build/libs/eureka-server-XXX.war )
      * Eureka Client (./eureka-client/build/libs/eureka-client-XXX.jar )
      * Dependencies (./eureka-server/testlibs/) (If you do not want to use maven to download dependencies 
         you can use these archives)
-
