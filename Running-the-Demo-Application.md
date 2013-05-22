@@ -4,15 +4,15 @@ The demo application comes packaged with the ability to configure,build and run 
 * Application Service
 * Application Client
 
-For more details on understanding the configurations, visit [this](https://github.com/Netflix/eureka/wiki/Getting-started-with-Eureka) page.
+For more details on understanding the configurations, visit [this](https://github.com/Netflix/eureka/wiki/Configuring-Eureka) page.
 
-#About the Demo
+# About the Demo
 
 The demo will help you set up a Eureka Server listening in a port of your choice. It will also help you setup an Application service that would serve requests and an Application Client that will send requests to the service.
 
 The Application Service registers with the Eureka Server and the Application client can find and then send the request to the Application Service. The client and server exit gracefully after trading messages.
 
-#Eureka Server Configuration
+# Eureka Server Configuration
 
 * Navigate to eureka-server/conf/ and edit the _eureka-client.properties_ and _eureka-client-test.properties_ if needed. (You do not have to edit the eureka-server.properties for the demo unless you are setting up advanced server configurations)
  
@@ -20,7 +20,7 @@ The Application Service registers with the Eureka Server and the Application cli
 
 * The above build also sets up all the libraries needed for running the demo service and the demo client.
 
-*  Copy the WAR artifact to your tomcat deployment directory under _$TOMCAT_HOME/webapps/ 
+* Copy the WAR artifact to your tomcat deployment directory under _$TOMCAT_HOME/webapps/ 
 
     <pre><code>
     cp ./eureka-server/build/libs/eureka-server-XXX-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war
@@ -28,15 +28,15 @@ The Application Service registers with the Eureka Server and the Application cli
 
 * Start your tomcat server. Access _**http://localhost:80/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
 
-#Eureka Client Configuration for Application Service
+# Eureka Client Configuration for Application Service
 
 * Navigate to eureka-server/conf/sampleservice and edit the _sample-eureka-service.properties_ if needed.
 
-#Eureka Client Configuration for Application Client
+# Eureka Client Configuration for Application Client
 
 * Navigate to eureka-server/conf/sampleclient and edit the _sample-eureka-client.properties_ if needed.
 
-#Running the Demo
+# Running the Demo
 
 * Switch to eureka-server directory and run ./runservice.sh
 * Wait until you see the message _Service started and ready to process requests_.
