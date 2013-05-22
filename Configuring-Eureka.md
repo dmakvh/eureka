@@ -1,4 +1,4 @@
-Read the document [here](https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance) to understand the concepts of the setup better.
+Read the [Eureka-at-a-glance page](https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance) to understand the concepts of the setup better.
 
 Eureka comes with two components - **Eureka Client** and the **Eureka Server**. Your architecture which is using Eureka will typically have two applications
 
@@ -11,9 +11,9 @@ The setups involve the following
 * Eureka Client for the application client
 * Eureka Client for the application service
 
-Eureka can be run in both the AWS and the non-AWS environments.
+Eureka can be run in both AWS and non-AWS environments.
 
-**If you are running in the cloud environment, please pass in the java commandline property -Deureka.datacenter=cloud so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.**
+**If you are running in the cloud environment, you will need to pass in the java commandline property -Deureka.datacenter=cloud so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.**
 
 # Configuring Eureka Client
 
@@ -37,11 +37,11 @@ You have the following choices to get the Eureka client binaries. Always try to 
 
 ## Configuration
 
-The easiest way to configure Eureka client is by using the property files. By default, Eureka client searches for property files _eureka-client.properties_ in the _classpath_. It further searches for environment specific overrides in the environment specific properties files. The environment is typically _test_ or _prod_ and is supplied by a _-Deureka.environment_ java commandline switch to the eureka client (without the _.properties_ suffix). Accordingly, the client also searches for _eureka-client-{test,prod}.properties._
+The easiest way to configure Eureka client is by using property files. By default, Eureka client searches for the property file _eureka-client.properties_ in the _classpath_. It further searches for environment specific overrides in the environment specific properties files. The environment is typically _test_ or _prod_ and is supplied by a _-Deureka.environment_ java commandline switch to the eureka client (without the _.properties_ suffix). Accordingly, the client also searches for _eureka-client-{test,prod}.properties._
 
-You can take a look at the examples [here](https://github.com/Netflix/eureka/tree/master/eureka-server/conf)  for default configurations. You can copy these configurations and edit for your need and place them in your class path. If you want to change the name of the properties file for some reason you can do so by specifying _-Deureka.client.props=<myprops>_  (without suffix) in the java commandline switch, where _<myprops>_ is the name of the property file to search for for.
+You can take a look at the examples [here](https://github.com/Netflix/eureka/tree/master/eureka-server/conf)  for default configurations. You can copy these configurations and edit for your need and place them in your class path. If you want to change the name of the properties file for some reason you can do so by specifying _-Deureka.client.props=<myprops>_  (without a suffix) in the java commandline switch, where _<myprops>_ is the name of the property file to search for for.
 
-The properties in the files explain what they are for. At the minimum the following things need to be configured
+The properties in the files explain what they are for. At the minimum the following things need to be configured:
     <pre><code> 
     Application Name (eureka.name)
     Application Port (eureka.port)
@@ -74,9 +74,9 @@ Eureka Server has two sets of configurations
 * Eureka Client configuration as explained above.
 * Eureka Server configuration.
 
-The easiest way to configure Eureka Server is by using property files similar to the Eureka Client above. First, configure the Eureka client that is running with the server as specified above. Eureka server itself fires up a Eureka Client that it uses to find other Eureka Servers. Therefore, you need to first configure the Eureka Client for the Eureka Server as you would do with any other clients that connect to the Eureka service. The Eureka Server will use it's Eureka Client configuration to identify peer eureka server that have the same name (ie) eureka.name
+The easiest way to configure Eureka Server is by using property files similar to the Eureka Client above. First, configure the Eureka client that is running with the server as specified above. Eureka server itself fires up a Eureka Client that it uses to find other Eureka Servers. Therefore, you need to first configure the Eureka Client for the Eureka Server as you would do with any other clients that connect to the Eureka service. The Eureka Server will use its Eureka Client configuration to identify peer eureka server that have the same name (ie) eureka.name
 
-After configuring the Eureka Client, you may need to configure the Eureka Server if you are running in AWS.Eureka server by default searches for property file _eureka-server.properties_ in the _classpath_. It further searches for environment specific overrides in the environment specific properties files. The environment is typically _test_ or _prod_ and is supplied by a _-Deureka.environment_ java commandline switch to the eureka server (without the _.properties_ suffix). Accordingly the server also searches for _eureka-server-{test,prod}.properties._
+After configuring the Eureka Client, you may need to configure the Eureka Server if you are running in AWS. Eureka server by default searches for property file _eureka-server.properties_ in the _classpath_. It further searches for environment specific overrides in the environment specific properties files. The environment is typically _test_ or _prod_ and is supplied by a _-Deureka.environment_ java commandline switch to the eureka server (without the _.properties_ suffix). Accordingly the server also searches for _eureka-server-{test,prod}.properties._
 
 Additional configurations are required if you are running in AWS as explained [here](https://github.com/Netflix/eureka/wiki/Configuring-Eureka-in-AWS-Cloud). For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html). 
 
