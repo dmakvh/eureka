@@ -50,7 +50,7 @@ Services **register** with Eureka and then send **heartbeats** to renew their le
 
 ## Non-java services and clients
 
-For services that are non-java based, you have a choice of implementing the client part of eureka in the language of the service or you can run a "side kick" which is essentially a java application with an embedded eureka client that handles the registrations and heartbeats. REST based endpoints are also exposed for all operations that are supported by the Eureka client. Non-java clients can use the REST end points to query for information about other services.
+For services that are non-java based, you have a choice of implementing the client part of eureka in the language of the service or you can run a "side car" which is essentially a java application with an embedded eureka client that handles the registrations and heartbeats. REST based endpoints are also exposed for all operations that are supported by the Eureka client. Non-java clients can use the REST end points to query for information about other services.
 
 ## Configurability
 
