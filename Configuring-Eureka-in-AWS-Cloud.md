@@ -1,4 +1,4 @@
-In AWS Cloud, instances come and go.T his means you cannot identify Eureka servers with a standard hostname or an IP Address. But, since Eureka Servers are the ones that help you identify other services with changing hostnames, you need a standard set of well identifiable addresses for Eureka Servers.
+In AWS Cloud, instances come and go. This means you cannot identify Eureka servers with a standard hostname or an IP Address. But, since Eureka Servers are the ones that help you identify other services with changing hostnames, you need a standard set of well identifiable addresses for Eureka Servers.
 
 That is where AWS EC2 Elastic IP addresses come in handy. [This](http://aws.amazon.com/articles/1346) is a must read if you have not heard about Elastic IP addresses before.
 
@@ -96,7 +96,7 @@ Eureka tries to query ASG related information so that it can make sure the launc
 eureka.asgName
 </pre>
 
-Eureka server requires access to query the ASG information as well as bind/unbind IPs in the cloud. Hence AWS policy should be configured to allow the above accesses. The following is the sample policy with the accesses required.
+Eureka server requires access to query the ASG information as well as bind/unbind IPs in the cloud. Hence AWS policy should be configured to allow the above accesses. The following is a sample policy with the accesses required.
 
 <pre>
 {
