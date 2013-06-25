@@ -8,3 +8,4 @@
 * [[Understanding Eureka Peer to Peer communication]]
 * [[Overriding Default Configurations]]
 * [[FAQ]]
+* [[End-to-End Examples]]
