@@ -34,13 +34,13 @@ The same configuration is then included with Eureka clients that register with E
 
 If you are looking for flexibility, you should configure Eureka service URLs using DNS.
 
-You first configure a DNS name for region that can be used to find the list of available zones. Since, using  DNS you can find only one CNAME for a DNS name, we use the TXT records to find a list of comma delimited DNS names. 
+You first configure a DNS name for region that can be used to find the list of available zones. Since, using  DNS you can find only one CNAME for a DNS name, we use the TXT records to find a list DNS names.
 
-For instance, following is a DNS TXT record created in the DNS server that lists the set of available DNS names for a zones.
+For instance, following is a DNS TXT record created in the DNS server that lists the set of available DNS names for a zone.
 
 <pre>
 <code>
-txt.us-east-1.mydomaintest.netflix.net=us-east-1c.mydomaintest.netflix.net,us-east-1d.mydomaintest.netflix.net,us-east-1e.mydomaintest.netflix.net
+txt.us-east-1.mydomaintest.netflix.net="us-east-1c.mydomaintest.netflix.net" "us-east-1d.mydomaintest.netflix.net" "us-east-1e.mydomaintest.netflix.net"
 </code>
 </pre>
 
@@ -48,9 +48,9 @@ Then, you can define TXT records recursively for each zone similar to the follow
 
 <pre>
 <code>
-txt.us-east-1c.mydomaintest.netflix.net=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
-txt.us-east-1d.mydomaintest.netflix.net=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/
-txt.us-east-1e.mydomaintest.netflix.net=http://ec2-50-179-285-592.compute-1.amazonaws.com:7001/discovery/v2/
+txt.us-east-1c.mydomaintest.netflix.net="http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/" "http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/"
+txt.us-east-1d.mydomaintest.netflix.net="http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/"
+txt.us-east-1e.mydomaintest.netflix.net"=http://ec2-50-179-285-592.compute-1.amazonaws.com:7001/discovery/v2/"
 </code>
 </pre>
 
