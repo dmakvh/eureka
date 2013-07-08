@@ -30,7 +30,7 @@ The application then can explicitly put the instance for traffic, by turning the
 
 <pre>
 <code>
-     ApplicationManager.getInstance().setInstanceStatus(InstanceStatus.UP)
+     ApplicationInfoManager.getInstance().setInstanceStatus(InstanceStatus.UP)
 </code>
 </pre>
 The application can also register health check [callbacks](http://netflix.github.com/eureka/javadoc/eureka-client/index.html) which can change the instance status to **DOWN** optionally.
