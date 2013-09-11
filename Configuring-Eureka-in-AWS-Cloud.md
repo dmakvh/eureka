@@ -4,7 +4,7 @@ That is where AWS EC2 Elastic IP addresses come in handy. [This](http://aws.amaz
 
 The first step is to obtain one Elastic IP per Eureka server you are going to run with your setup. Ideally, you would run Eureka with the architecture specified [here](https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance). So, you need one Elastic IP for every server in the cluster. Once you configure your Eureka Server with the list of elastic ip address, Eureka server deals with the hassle of finding the elastic ip that is unused and binds it to itself during the start up. 
 
-You normally have one [ASG](http://aws.amazon.com/autoscaling/) for a Eureka cluster within an AWS Region and the instance launches configured to spread equally across all zones. This means, you would at least launch one Eureka Server per zone for redundancy and zone failures. Whenever an instance gets killed, the ASG will launch a new Eureka server most likely in the zone that was vacated. The new server will pick a free Elastic IP from that zone and bind itself there. For clients that are accessing Eureka Servers, this is transparent and business as usual.
+You normally have one [ASG](http://aws.amazon.com/autoscaling/) for a Eureka cluster within an AWS Region and the instance launches configured to spread equally across all zones. This means, you would at least launch one Eureka Server per zone for redundancy and zone failures. Whenever an instance gets killed, the ASG will launch a new Eureka server most likely in the zone that was vacated. The new server will pick a free Elastic IP from that zone and bind itself there. For clients that are accessing Eureka Servers, this is transparent and business as usual as the eureka clients automatically failover to other servers and then reconnect again when the server comes back up.
 
 You can configure Elastic IPs in 2 ways depending on the level of flexibility you need. At Netflix, we would like to add new zones or new Eureka servers transparently and hence we use the DNS model to allocate the new EIPs and the both the clients and servers find them on the fly. A simpler model would be to define them in the Eureka configuration files, but the drawback is, they get baked into the [AMI](https://aws.amazon.com/amis/) and distributed to probably 100's of instances that need to talk to each other and adding or removing zones can be extremely cumbersome, because you need to deploy the new AMI with changed configurations to all the clients.
 
@@ -79,6 +79,21 @@ Eureka server finds an EIP based on which zone it is launched. It then tries to 
 How does Eureka find unused EIPs? It uses the Eureka client to find the list of peer instances and see what EIPS they are bound with and picks the one that is not bound. It prefers to find the EIP assigned to its zone, so that the Eureka clients of the all the other instances in the zone can talk to Eureka server that are co-located in the same zone. If the Eureka server cannot find any EIPS free for its zone, it tries the EIPs assigned in other zones. If all of them are bound, then the Eureka server starts up and waits for an EIP to become free and tries every 5 mins to bind the EIP.
 
 The Eureka clients similarly try to find a Eureka server co-located in the same zone and if they do not find any, they fail over to the Eureka servers in the other zones.
+
+## Eureka Failover
+
+When a list of eureka servers are provided for a client, eureka clients automatically failover to other nodes in the cluster. Let us consider the below configuration to understand how this works
+
+<code>
+eureka.us-east-1.availabilityZones=us-east-1c,us-east-1d,us-east-1e
+eureka.serviceUrl.us-east-1c=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
+eureka.serviceUrl.us-east-1d=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/
+eureka.serviceUrl.us-east-1e=http://ec2-50-179-285-592.compute-1.amazonaws.com:7001/discovery/v2/
+</code>
+
+We have defined 3 zones (us-east-1c, us-east-1d and us-east1e) and exactly one EIP per zone. Say, for example the eureka server running in us-east-1c at the location http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/ fails, all eureka clients automatically communicate to the next server in the zone located at http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/. If that fails, the clients try the next one in the list and so on.
+
+When the failed server comes back up, the eureka clients automatically reconnect back to the server in its zone.
 
 ## Eureka AWS-specific properties
 
