@@ -84,12 +84,14 @@ The Eureka clients similarly try to find a Eureka server co-located in the same 
 
 When a list of eureka servers are provided for a client, eureka clients automatically failover to other nodes in the cluster. Let us consider the below configuration to understand how this works
 
+<pre>
 <code>
 eureka.us-east-1.availabilityZones=us-east-1c,us-east-1d,us-east-1e
 eureka.serviceUrl.us-east-1c=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
 eureka.serviceUrl.us-east-1d=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/
 eureka.serviceUrl.us-east-1e=http://ec2-50-179-285-592.compute-1.amazonaws.com:7001/discovery/v2/
 </code>
+</pre>
 
 We have defined 3 zones (us-east-1c, us-east-1d and us-east1e) and exactly one EIP per zone. Say, for example the eureka server running in us-east-1c at the location http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/ fails, all eureka clients automatically communicate to the next server in the zone located at http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/. If that fails, the clients try the next one in the list and so on.
 
