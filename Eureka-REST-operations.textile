@@ -23,6 +23,12 @@ For JSON/XML, the content types supplied must be **application/xml** or **applic
 | Update metadata | PUT /eureka/v2/apps/**appID**/**instanceID**/metadata?key=value| HTTP Code:
 * 200 on success
 * 500 on failure |
+| Query for all instances under a particular **vip address** | GET /eureka/v2/vips/**vipAddress** | 
+* HTTP Code: 200 on success Output: JSON/XML 
+* 404 if the **vipAddress** does not exist.|
+| Query for all instances under a particular **secure vip address** | GET /eureka/v2/svips/**svipAddress** | 
+* HTTP Code: 200 on success Output: JSON/XML 
+* 404 if the **svipAddress** does not exist.|
 
 
 
