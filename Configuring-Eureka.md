@@ -64,8 +64,8 @@ With Eureka server, you have the following choices to get the binaries
 
 *  You can build a WAR archive from the sources as specified [here](https://github.com/Netflix/eureka/wiki/Building-Eureka-Client-and-Server).
 
-*  You can download the WAR archive from mavencentral by using this URL  
-   "http://search.maven.org/#search%7Cga%7C1%7Ceureka-server" 
+*  You can download the WAR archive from cloudbees by using this URL  
+   "https://netflixoss.ci.cloudbees.com/job/eureka-master/lastStableBuild/" 
 
 ## Configuration
 
@@ -82,6 +82,6 @@ Additional configurations are required if you are running in AWS as explained [h
 
 If you are [building](https://github.com/Netflix/eureka/wiki/Building-Eureka-Client-and-Server) the WAR archive, you can edit the files under _eureka-server/conf_ in place and the build takes care of placing the properties files under WEB-INF/classes before creating the archive.
 
-If you are [downloading]("http://search.maven.org/#search%7Cga%7C1%7Ceureka-server" ) the archive from maven, then you can merge in the edited property files under WEB-INF/classes yourself.
+If you are [downloading]("https://netflixoss.ci.cloudbees.com/job/eureka-master/lastStableBuild/" ) the archive from cloudbees, then you can merge in the edited property files under WEB-INF/classes yourself.
 
 [Running](https://github.com/Netflix/eureka/wiki/Running-the-Demo-Application) the demo application may help you to understand the configurations better.
