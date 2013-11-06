@@ -124,6 +124,7 @@ Eureka server requires access to query the ASG information as well as bind/unbin
     {
       "Sid": "Stmt1358974336152",
       "Action": [
+        "ec2:DescribeAddresses",
         "ec2:AssociateAddress",
         "ec2:DisassociateAddress"
       ],
