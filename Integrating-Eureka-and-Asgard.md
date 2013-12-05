@@ -28,6 +28,18 @@ Example:eureka.secureHealthCheckUrl=https://${eureka.hostname}:8088/Priam/REST/h
 
 The expression _${eureka.hostname}_ is automatically evaluated by Eureka client to supply the appropriate host name.
 
+***Eureka client datacenter***
+
+The Eureka client must also be configured to use the Amazon datacenter for proper Asgard integration to take place.  For applications talking to Eureka through the java API, this is done by initializing DiscoveryClient with an instance of `CloudInstanceConfig` like so:
+
+```
+    DiscoveryManager.getInstance().initComponent(
+        new CloudInstanceConfig(),
+        new DefaultEurekaClientConfig());
+```
+
+If you are registering a Karyon application with Eureka, it's datacenter can be set to Amazon by setting the system property `com.netflix.karyon.eureka.datacenter.type` to `Amazon`.
+
 **Other integration points**
 
 Asgard can also link other URLs from eureka for its status and home page URLs when the following properties are specified.
