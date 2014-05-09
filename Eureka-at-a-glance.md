@@ -48,9 +48,9 @@ The architecture above depicts how Eureka is deployed at Netflix and this is how
 
 Services **register** with Eureka and then send **heartbeats** to renew their leases every 30 seconds. If the client cannot renew the lease for a few times, it is taken out of the server registry in about 90 seconds. The registration information and the renewals are replicated to all the eureka nodes in the cluster. The clients from any zone can look up the **registry** information (happens every 30 seconds) to locate their services (which could be in any zone) and make remote calls.
 
-## Non-java services and clients
+## Non-Java services and clients
 
-For services that are non-java based, you have a choice of implementing the client part of eureka in the language of the service or you can run a "side car" which is essentially a java application with an embedded eureka client that handles the registrations and heartbeats. REST based endpoints are also exposed for all operations that are supported by the Eureka client. Non-java clients can use the REST end points to query for information about other services.
+For services that are non-Java based, you have a choice of implementing the client part of eureka in the language of the service or you can run a "side car" which is essentially a Java application with an embedded eureka client that handles the registrations and heartbeats. REST based endpoints are also exposed for all operations that are supported by the Eureka client. Non-Java clients can use the REST end points to query for information about other services.
 
 ## Configurability
 
