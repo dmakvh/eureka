@@ -8,7 +8,7 @@ In AWS cloud, because of its inherent nature, servers come and go. Unlike the tr
 
 ## How different is Eureka from AWS ELB?
 
-AWS Elastic Load Balancer is a load balancing solution for edge services exposed to end-user web traffic. Eureka fills the need for mid-tier load balancing. While you can theoretically put your mid-tier services behind the AWS ELB, you expose them to the outside world and there by losing all the usefulness of the AWS security groups.
+AWS Elastic Load Balancer is a load balancing solution for edge services exposed to end-user web traffic. Eureka fills the need for mid-tier load balancing. While you can theoretically put your mid-tier services behind the AWS ELB, in EC2 classic you expose them to the outside world and there by losing all the usefulness of the AWS security groups.
 
 AWS ELB is also a traditional proxy-based load balancing solution whereas with Eureka it is different in that the load balancing happens at the instance/server/host level. The client instances know all the information about which servers they need to talk to. This is a blessing or a curse depending on which way you look at it. If you are looking for a sticky user session based load balancing which AWS now offers, Eureka does not offer a solution out of the box. At Netflix, we prefer our services to be stateless (non-sticky). This facilitates a much better scalability model and Eureka is well suited to address this.
 
