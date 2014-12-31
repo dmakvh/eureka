@@ -5,7 +5,7 @@
 
 ##Build Steps
 
-* Install the latest [git](http://git-scm.com/book/en/Getting-Started-Installing-Git) and [gradle](http://gradle.org/installation) packages.
+* Install the latest [git](http://git-scm.com/book/en/Getting-Started-Installing-Git) package.
 
 *  Get the Eureka source from github
 
