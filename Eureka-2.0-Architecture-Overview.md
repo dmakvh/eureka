@@ -16,14 +16,14 @@ an eventually consistent manner. The write cluster's registry content is read by
 is used by the Eureka clients. As the read cluster is effectively a cache layer, it can
  be easily, and rapidly scaled up and down depending on the volume of the traffic. The write cluster should be pre-scaled with a capacity enough to handle the peek/busy hour traffic. Although it can be scaled up and down dynamically, it needs to be done with more coordination. Scaling up will require traffic re-balancing, which will eventually happen, but not immediately. Scaling down will force the clients from the shutdown node(s) to re-register.
 
-![Figure 1. Eureka 2.0 Architecture](https://github.com/Netflix/eureka/blob/2.x/images/eureka2/eureka2_architecture.png)
+![Figure 1. Eureka 2.0 Architecture](images/eureka2_architecture.png)
 
 ## Client registration
 
 Eureka clients can register themselves to be discoverable via registration, heartbeats and updates.
 Registrations include discoverable identifiers and service status, as well as optional freeform metadata. Eureka 2.0 servers responsible for handling these actions form the write cluster.
 
-![Figure 2. Client registration](https://github.com/Netflix/eureka/blob/2.x/images/eureka2/eureka2_client_registration.png)
+![Figure 2. Client registration](images/eureka2_client_registration.png)
 
 A single client can register multiple service instances. Each registration is handled over a separate connection to the write server, as the connection status itself denotes the service liveness. Software heartbeats at the Eureka level is used to determine connection liveness as network stacks in virtualized environments are not 100% trustworthy. If a connection is lost, the registration entry in the write cluster registry is put into the eviction queue, and ultimately remove from the registry. Well behaving clients should always send unregister request prior to disconnecting. This will result in immediate removal of the service from the registry.
 After the registration, the client can send any number of update requests, changing its instance data. One usage example would be modification of the service status (up/down).
@@ -33,13 +33,13 @@ After the registration, the client can send any number of update requests, chang
 Eureka clients can subscribe to interest sets on Eureka servers. After a successful subscription, all changes to
 subscribed interests are pushed by the server to the client. Eureka servers responsible for handling these actions form the read cluster.
 
-![Figure 3. Client subscription](https://github.com/Netflix/eureka/blob/2.x/images/eureka2/eureka2_client_subscription.png)
+![Figure 3. Client subscription](images/eureka2_client_subscription.png)
 
 ## Service registry data model
 
 Eureka 2.0 is designed to work with different cloud providers and data centers, thus its underlying data model must be extendable to accommodate current and future deployments. Out of the box a basic data center model, and Amazon AWS/VPC clouds are supported.
 
-![Figure 4. Data model](https://github.com/Netflix/eureka/blob/2.x/images/eureka2/eureka2_data_model.png)
+![Figure 4. Data model](images/eureka2_data_model.png)
 
 The predefined set of service instance attributes can be extended via custom set of key/value pairs that can be added to metadata map. The network topology is not predefined, and is concretized by cloud specific extensions. Thus simple public/private IP model is provided for AWS deployment, but multi NIC/ENI support is supported for VPC.
 
