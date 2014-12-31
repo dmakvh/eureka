@@ -1,3 +1,4 @@
+# Eureka 1.0
 * [[Eureka at a glance]]
 * [[Configuring Eureka]]
 * [[Building Eureka Client and Server]]
@@ -9,3 +10,13 @@
 * [[Overriding Default Configurations]]
 * [[FAQ]]
 * [[End-to-End Examples]]
+
+# Eureka 2.0 (work in progress)
+
+```
+WORK IN PROGRESS.
+Eureka 2.0 is still under active development, and there might be 
+updates to its architecture/public API.
+```
+* [[Eureka 2.0 Motivations]]
+* [[Eureka 2.0 Architecture Overview]]
