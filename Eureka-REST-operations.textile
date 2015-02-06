@@ -54,6 +54,9 @@ When you register, you'll need to post an XML (or JSON) body that conforms to th
                 <xsd:element name="status" type="statusType" />
                 <xsd:element name="port" type="xsd:positiveInteger" minOccurs="0" />
                 <xsd:element name="securePort" type="xsd:positiveInteger" />
+                <xsd:element name="homePageUrl" type="xsd:string" />
+                <xsd:element name="statusPageUrl" type="xsd:string" />
+                <xsd:element name="healthCheckUrl" type="xsd:string" />
                <xsd:element ref="dataCenterInfo" minOccurs="1" maxOccurs="1" />
                 <!-- optional -->
                 <xsd:element ref="leaseInfo" minOccurs="0"/>
