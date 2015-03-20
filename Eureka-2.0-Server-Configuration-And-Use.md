@@ -52,7 +52,7 @@ Change the ports specified in the [configuration file](../blob/2.x/eureka2-write
 Write servers have the following responsibility:
 * accepting interest discover requests from eureka interest clients and server ChangeNotifications
 
-### Building and Running the Write Server (for now)
+### Building and Running the Read Server (for now)
 ```
 git clone https://github.com/Netflix/eureka.git
 cd eureka/
