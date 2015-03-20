@@ -17,6 +17,8 @@ eureka.common.writeCluster.resolverType=fixed
 eureka.common.writeCluster.serverList=["localhost:12102:12103:12104","localhost:12112:12113:12114"]
 ```
 
+**This common config to identify all write servers are needed by all server types.**
+
 Each server will also need configuration to self identify.
 * appName - the server's appName in its own InstanceInfo record
 * vipAddress - the server's vipAddress in its own InstanceInfo record
@@ -28,37 +30,56 @@ eureka.dataCenterInfo.type=Basic
 ```
 
 ## Write Servers
-Artifact
-* com.netflix.eureka:eureka2-write-server
-
 Write servers have the following responsibilities:
 * accepting registration requests from eureka registration clients
-* accepting interest discover requests from eureka interest clients
+* accepting interest discover requests from eureka interest clients and server ChangeNotifications
 * replicate local registration data to peer write servers
 
-### Building the Write Server
-
+### Building and Running the Write Server (for now)
+```
+git clone https://github.com/Netflix/eureka.git
+cd eureka/
+git checkout 2.x
+cd eureka2-write-server/
+../gradlew run
+```
 ### Configuring the Write Server
-For each of the responsibilities listed above, a separate port needs to be exposed.
-See the ]example configuration](../blob/2.x/eureka2-write-server/src/main/resources/eureka-write-server.properties)
+For each of the responsibilities listed above, a separate port needs to be exposed. These are governed by the properties
+* eureka.services.registration.port
+* eureka.services.discovery.port
+* eureka.services.replication.port
+
+Change the ports specified in the [configuration file](../blob/2.x/eureka2-write-server/src/main/resources/eureka-write-server.properties) if you need the ports to be different from the defaults for each specific write server.
 
 ## Read Servers
-Artifact
-* com.netflix.eureka:eureka2-read-server
 
+Write servers have the following responsibility:
+* accepting interest discover requests from eureka interest clients and server ChangeNotifications
 
-### Building the Read Server
-
-
+### Building and Running the Write Server (for now)
+```
+git clone https://github.com/Netflix/eureka.git
+cd eureka/
+git checkout 2.x
+cd eureka2-read-server/
+../gradlew run
+```
 ### Configuring the Read Server
+The interest protocol port is governed by the property:
+* eureka.services.discovery.port
 
-
-## Bridge Servers
-
-### Building the Bridge Server
-
-
-### Configuring the Bridge Server
-
+Change the port specified in the [configuration file](../blob/2.x/eureka2-read-server/src/main/resources/eureka-read-server.properties) if you need the port to be different from the defaults for each specific read server.
 
 ## The Embedded Cluster
+An embedded server is available from eureka2-testkit that can run multiple server types within the same JVM, for testing purposes.
+
+### Building and Running the Embedded Cluster (for now)
+```
+git clone https://github.com/Netflix/eureka.git
+cd eureka/
+git checkout 2.x
+cd eureka2-testkit/
+../gradlew runCluster
+```
+### Configuring the Embedded Cluster
+See available args in the testkit [build.gradle](../blob/2.x/eureka2-testkit/build.gradle) for task runCluster.
