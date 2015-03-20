@@ -1,5 +1,5 @@
 ## Prerequisites
-* JDK 1.7 or higher
+* JDK 1.7
 
 You can get the Eureka 2.0 client binaries from the following sources. Always try to get the latest release as tend to have more fixes.
 * [Bintray](https://bintray.com/netflixoss/maven/eureka/view)
