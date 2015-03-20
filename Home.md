@@ -20,4 +20,5 @@ updates to its architecture/public API.
 ```
 * [[Eureka 2.0 Motivations]]
 * [[Eureka 2.0 Architecture Overview]]
-* [[Eureka 2.0 Client Configuration And Use ]]
+* [[Eureka 2.0 Client Configuration And Use]]
+* [[Eureka 2.0 Server Configuration And Use]]
