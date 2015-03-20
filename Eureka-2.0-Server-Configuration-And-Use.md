@@ -1,10 +1,6 @@
 ## Prerequisites
 * JDK 1.7
 
-You can get the Eureka 2.0 binaries from the following sources. Always try to get the latest release as tend to have more fixes.
-* [Bintray](https://bintray.com/netflixoss/maven/eureka/view)
-* [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.netflix.eureka%22)
-
 ## Types of Servers
 Eureka 2.0 uses two main types of servers by default, write servers and read servers. An optional bridge module is available that can be configured to be a component of a write server that allows bridge of data from a currently deployed eureka 1.0 system to the 2.0 system.
 
