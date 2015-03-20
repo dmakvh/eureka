@@ -1,3 +1,26 @@
+## Prerequisites
+* JDK 1.7 or higher
+
+You can get the Eureka 2.0 client binaries from the following sources. Always try to get the latest release as tend to have more fixes.
+* [Bintray](https://bintray.com/netflixoss/maven/eureka/view)
+* [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.netflix.eureka%22)
+
+Adding eureka2-client as a gradle dependency:
+```
+dependencies {
+        compile "com.netflix.eureka:eureka2-client:2.0.0-rc.1"
+}
+```
+
+Adding eureka2-client as a maven dependency:
+```
+<dependency>
+  <groupId>com.netflix.eureka</groupId>
+  <artifactId>eureka2-client</artifactId>
+  <version>2.0.0-rc.1</version>
+ </dependency>
+```
+
 ## Types of Clients
 Eureka 2.0 provide interfaces for two different types of clients specific for eureka operations "interest discovery" and "instance registration".
 
