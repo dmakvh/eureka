@@ -13,7 +13,7 @@ eureka.common.writeCluster.resolverType=fixed
 eureka.common.writeCluster.serverList=["localhost:12102:12103:12104","localhost:12112:12113:12114"]
 ```
 
-**This common config to identify all write servers are needed by all server types.**
+**This common config to identify all write servers is needed by all server types.**
 
 Each server will also need configuration to self identify.
 * appName - the server's appName in its own InstanceInfo record
