@@ -99,6 +99,8 @@ When you register, you'll need to post an XML (or JSON) body that conforms to th
             <xsd:enumeration value = "UP"/>
             <xsd:enumeration value = "DOWN"/>
             <xsd:enumeration value = "STARTING"/>
+            <xsd:enumeration value = "OUT_OF_SERVICE"/>
+            <xsd:enumeration value = "UNKNOWN"/>
         </xsd:restriction>
     </xsd:simpleType>
 
