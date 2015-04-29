@@ -78,6 +78,10 @@ The easiest way to configure Eureka Server is by using property files similar to
 
 After configuring the Eureka Client, you may need to configure the Eureka Server if you are running in AWS. Eureka server by default searches for property file _eureka-server.properties_ in the _classpath_. It further searches for environment specific overrides in the environment specific properties files. The environment is typically _test_ or _prod_ and is supplied by a _-Deureka.environment_ java commandline switch to the eureka server (without the _.properties_ suffix). Accordingly the server also searches for _eureka-server-{test,prod}.properties._
 
+**Configuring for local development**<br>
+When running eureka server for local development, there is typically a wait of ~3 minutes until it fulling boots up. This is due to the default server behaviour to search for peers to sync up and retries when it finds no available peers. This wait time can be reduced by setting the property `eureka.numberRegistrySyncRetries=0`.
+
+**Configuring for AWS**<br>
 Additional configurations are required if you are running in AWS as explained [here](https://github.com/Netflix/eureka/wiki/Configuring-Eureka-in-AWS-Cloud). For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html). 
 
 If you are [building](https://github.com/Netflix/eureka/wiki/Building-Eureka-Client-and-Server) the WAR archive, you can edit the files under _eureka-server/conf_ in place and the build takes care of placing the properties files under WEB-INF/classes before creating the archive.
