@@ -26,19 +26,16 @@ The Application Service registers with the Eureka Server and the Application cli
     cp ./eureka-server/build/libs/eureka-server-XXX-SNAPSHOT.war $TOMCAT_HOME/webapps/eureka.war
     </pre></code> 
 
-* Start your tomcat server. Access _**http://localhost:80/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
+* Start your tomcat server. Access _**http://localhost:8080/eureka**_ to verify the information there. Your server's eureka client should register itself in 30 seconds and you should see that information there.
 
 # Eureka Client Configuration for Application Service
 
-* Navigate to eureka-server/conf/sampleservice and edit the _sample-eureka-service.properties_ if needed.
+* Navigate to eureka-examples/conf and edit the _sample-eureka-service.properties_ if needed.
 
 # Eureka Client Configuration for Application Client
 
-* Navigate to eureka-server/conf/sampleclient and edit the _sample-eureka-client.properties_ if needed.
+* Navigate to eureka-examples/conf and edit the _sample-eureka-client.properties_ if needed.
 
 # Running the Demo
 
-* Switch to eureka-server directory and run ./runservice.sh
-* Wait until you see the message _Service started and ready to process requests_.
-* Switch to eureka-client directory and run ./runclient.sh
-* You should see the message _Received response from server. Communication all fine using Eureka._ 
+See the examples readme https://github.com/Netflix/eureka/tree/master/eureka-examples
