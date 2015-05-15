@@ -2,7 +2,7 @@ Hopefully, at this point you have visited [this](https://github.com/Netflix/eure
 
 The first step to interact with Eureka Server is to initialize the Eureka Client. If you are running in the AWS Cloud, you initialize the following way:
 
-As of release 1.1.153, EurekaModule allows you to use eureka-client with governator/guice. See this [governated example](https://github.com/Netflix/eureka/blob/master/eureka-examples/src/main/java/com/netflix/eureka/ExampleEurekaGovernatedService.java).
+As of release 1.1.153, EurekaModule class is introduced to allow the use of eureka-client with governator/guice. See this [governated example](https://github.com/Netflix/eureka/blob/master/eureka-examples/src/main/java/com/netflix/eureka/ExampleEurekaGovernatedService.java).
 
 Pre release 1.1.153, you can initialize Eureka Client in the following way:
 <pre>
