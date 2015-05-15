@@ -23,7 +23,7 @@ If you are running in other data centers, you initialize the following way:
 </code>
 </pre>
 
-Eureka client looks for _eureka-client.properties_ as explained [here](https://github.com/Netflix/eureka/wiki/Getting-started-with-Eureka).
+Eureka client looks for _eureka-client.properties_ as explained [here](https://github.com/Netflix/eureka/wiki/Configuring-Eureka#configuration).
 
 ## About Instance Statuses
 
