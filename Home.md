@@ -3,6 +3,7 @@
 * [[Configuring Eureka]]
 * [[Building Eureka Client and Server]]
 * [[Running the Demo Application]]
+* [[Using Eureka Client with Governator/Guice]]
 * [[Configuring Eureka in AWS Cloud]]
 * [[Understanding Eureka Client/Server Communication]]
 * [[Eureka REST operations]]
