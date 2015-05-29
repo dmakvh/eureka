@@ -66,16 +66,4 @@ The interest protocol port is governed by the property:
 
 Change the port specified in the [configuration file](../blob/2.x/eureka2-read-server/src/main/resources/eureka-read-server.properties) if you need the port to be different from the defaults for each specific read server.
 
-## The Embedded Cluster
-An embedded server is available from eureka2-testkit that can run multiple server types within the same JVM, for testing purposes.
-
-### Building and Running the Embedded Cluster (for now)
-```
-git clone https://github.com/Netflix/eureka.git
-cd eureka/
-git checkout 2.x
-cd eureka2-testkit/
-../gradlew runCluster
-```
-### Configuring the Embedded Cluster
-See available args in the testkit [build.gradle](../blob/2.x/eureka2-testkit/build.gradle) for task runCluster.
+## Running Eureka Servers in Tests
