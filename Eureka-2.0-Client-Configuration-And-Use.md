@@ -76,7 +76,7 @@ With an interest specified, a stream of ChangeNotifications of instance informat
                 });
 ```
 
-Two transformational functions are provided in [`ChangeNotificationFunctions`](../blob/2.x/eureka2-client/src/main/java/com/netflix/eureka2/client/functions/ChangeNotificationFunctions.java). This can be applied to the base ChangeNotification stream to **buffer** the notifications into delta lists, or **buffer** then **snapshot** the notifications into full snapshot lists that will emit a new snapshot if anything changes.
+Two transformational functions are provided in [`InterestFunctions`](../blob/2.x/eureka2-client/src/main/java/com/netflix/eureka2/client/functions/InterestFunctions.java). This can be applied to the base ChangeNotification stream to **buffer** the notifications into delta lists, or **buffer** then **snapshot** the notifications into full snapshot lists that will emit a new snapshot if anything changes.
 
 ```java
         interestClient.forInterest(forFullRegistry())
