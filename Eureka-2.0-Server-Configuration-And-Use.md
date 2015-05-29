@@ -67,6 +67,23 @@ The interest protocol port is governed by the property:
 Change the port specified in the [configuration file](../blob/2.x/eureka2-read-server/src/main/resources/eureka-read-server.properties) if you need the port to be different from the defaults for each specific read server.
 
 ## Running Eureka Servers in Tests
+Adding eureka2-testkit as a gradle dependency:
+```
+dependencies {
+    compile "com.netflix.eureka:eureka2-testkit:2.0.0-rc.2"
+}
+```
+
+Adding eureka2-testkit as a maven dependency:
+```
+<dependency>
+    <groupId>com.netflix.eureka</groupId>
+    <artifactId>eureka2-testkit</artifactId>
+    <version>2.0.0-rc.2</version>
+    <scope>test</scope>
+</dependency>
+```
+
 To run Eureka Servers (of both variants) in tests, a [junit rule](https://github.com/Netflix/eureka/blob/2.x/eureka2-testkit/src/main/java/com/netflix/eureka2/testkit/junit/resources/EurekaDeploymentResource.java) exist that allows deployment of arbitrary numbers of write and read servers.
 
 An example of how this rule is used can be see in [this integration test](https://github.com/Netflix/eureka/blob/2.x/eureka2-integration/src/test/java/com/netflix/eureka2/integration/ReadWriteClusterIntegrationTest.java), where 3 write servers and 6 read servers are created and various clients connecting to these write and read clusters are used.
