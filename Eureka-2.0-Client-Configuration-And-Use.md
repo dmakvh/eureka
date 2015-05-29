@@ -8,7 +8,7 @@ You can get the Eureka 2.0 client binaries from the following sources. Always tr
 Adding eureka2-client as a gradle dependency:
 ```
 dependencies {
-    compile "com.netflix.eureka:eureka2-client:2.0.0-rc.1"
+    compile "com.netflix.eureka:eureka2-client:2.0.0-rc.2"
 }
 ```
 
@@ -17,7 +17,7 @@ Adding eureka2-client as a maven dependency:
 <dependency>
     <groupId>com.netflix.eureka</groupId>
     <artifactId>eureka2-client</artifactId>
-    <version>2.0.0-rc.1</version>
+    <version>2.0.0-rc.2</version>
 </dependency>
 ```
 
