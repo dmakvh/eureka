@@ -101,8 +101,7 @@ When the failed server comes back up, the eureka clients automatically reconnect
 
 In the AWS cloud environment, pass in the java commandline property **-Deureka.datacenter=cloud** so that the Eureka Client/Server knows to initialize the information specific to AWS cloud.
 
-You will also need to provide the AWS access ID and key in your eureka server configuration. You can create IAM keys and provide only the access required (see below) and use those keys in the configuration.
-
+Eureka servers will require AWS access to run in EC2. There are two options for this. Either use the default (no) configuration and the servers will use the InstanceProfileCredentials on the EC2 instances, or alternatively you can explicitly set the AWS accessId and secretKey via configurations:
 <pre>
    eureka.awsAccessId=
    eureka.awsSecretKey=
