@@ -19,7 +19,7 @@ Eureka can be run in both AWS and non-AWS environments.
 
 ## Prerequisites
 
-* JDK 1.6 or higher
+* JDK 1.7 or higher
 
 You have the following choices to get the Eureka client binaries. Always try to get the latest release as tend to have more fixes.
 
