@@ -45,8 +45,6 @@ When you register, you'll need to post an XML (or JSON) body that conforms to th
                 <!-- hostName in ec2 should be the public dns name, within ec2 public dns name will
                      always resolve to its private IP -->
                 <xsd:element name="hostName" type="xsd:string" />
-                <!-- app name
-                     Instructions for adding a new app name - <a _jive_internal="true" href="/clearspace/docs/DOC-20965" target="_blank">http://wiki.netflix.com/clearspace/docs/DOC-20965</a> -->
                 <xsd:element name="app" type="xsd:string" />
                 <xsd:element name="ipAddr" type="xsd:string" />
                 <xsd:element name="vipAddress" type="xsd:string" />
