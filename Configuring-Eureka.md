@@ -39,7 +39,7 @@ You have the following choices to get the Eureka client binaries. Always try to 
 
 The easiest way to configure Eureka client is by using property files. By default, Eureka client searches for the property file _eureka-client.properties_ in the _classpath_. It further searches for environment specific overrides in the environment specific properties files. The environment is typically _test_ or _prod_ and is supplied by a _-Deureka.environment_ java commandline switch to the eureka client (without the _.properties_ suffix). Accordingly, the client also searches for _eureka-client-{test,prod}.properties._
 
-You can take a look at the examples [here](https://github.com/Netflix/eureka/tree/master/eureka-server/conf)  for default configurations. You can copy these configurations and edit for your need and place them in your class path. If you want to change the name of the properties file for some reason you can do so by specifying _-Deureka.client.props=<myprops>_  (without a suffix) in the java commandline switch, where _<myprops>_ is the name of the property file to search for for.
+You can take a look at the examples [here](https://github.com/Netflix/eureka/tree/master/eureka-examples/conf)  for default configurations. You can copy these configurations and edit for your need and place them in your class path. If you want to change the name of the properties file for some reason you can do so by specifying _-Deureka.client.props=<myprops>_  (without a suffix) in the java commandline switch, where _<myprops>_ is the name of the property file to search for for.
 
 The properties in the files explain what they are for. At the minimum the following things need to be configured:
     <pre><code> 
