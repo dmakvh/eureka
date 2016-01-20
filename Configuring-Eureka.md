@@ -89,3 +89,7 @@ If you are [building](https://github.com/Netflix/eureka/wiki/Building-Eureka-Cli
 If you are [downloading]("http://search.maven.org/#search%7Cga%7C1%7Ceureka-server") the archive from maven, then you can merge in the edited property files under WEB-INF/classes yourself.
 
 [Running](https://github.com/Netflix/eureka/wiki/Running-the-Demo-Application) the demo application may help you to understand the configurations better.
+
+# Client/Server version compatibility
+
+We use semantic versioning for eureka, and will maintain client/server protocol compatibility between minor version upgrades (i.e. the 1.x versions should have compatible protocol between client and server deployments). In general, it's always safer to have the servers be on a newer version than clients.
