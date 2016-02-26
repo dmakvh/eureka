@@ -17,8 +17,8 @@ For JSON/XML, the content types supplied must be **application/xml** or **applic
 | Take instance out of service | PUT /eureka/v2/apps/**appID**/**instanceID**/status?value=OUT_OF_SERVICE| HTTP Code:
 * 200 on success
 * 500 on failure |
-| Put instance back into service | PUT /eureka/v2/apps/**appID**/**instanceID**/status?value=UP | HTTP Code:
-* 200 on success
+| Put instance back into service (remove override) | DELETE /eureka/v2/apps/**appID**/**instanceID**/status?value=UP | HTTP Code:
+* 200 on success. The value=UP is optional, it is used as a suggestion for the fallback status due to removal of the override
 * 500 on failure |
 | Update metadata | PUT /eureka/v2/apps/**appID**/**instanceID**/metadata?key=value| HTTP Code:
 * 200 on success
