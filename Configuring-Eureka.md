@@ -50,8 +50,8 @@ The properties in the files explain what they are for. At the minimum the follow
    </pre></code> 
 
 For more advanced configurations, check out the options available in the following links.
-http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/appinfo/EurekaInstanceConfig.html
-http://netflix.github.com/eureka/javadoc/eureka-client/com/netflix/discovery/EurekaClientConfig.html
+https://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/appinfo/EurekaInstanceConfig.java
+https://github.com/Netflix/eureka/blob/master/eureka-client/src/main/java/com/netflix/discovery/EurekaClientConfig.java
 
 # Configuring Eureka Server
 
