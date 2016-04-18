@@ -45,7 +45,7 @@ txt.us-east-1.mydomaintest.netflix.net="us-east-1c.mydomaintest.netflix.net"
 </code>
 </pre>
 
-Then, you can define TXT records recursively for each zone similar to the following
+Then, you can define TXT records recursively for each zone similar to the following (if more than one hostname per zone, space delimit)
 
 <pre>
 <code>
