@@ -14,8 +14,8 @@
 
 ```
 WORK IN PROGRESS.
-Eureka 2.0 is still under active development, and there might be 
-updates to its architecture/public API.
+Eureka 2.0 is still under active development, and there will be
+significant updates to its architecture/public API.
 ```
 * [[Eureka 2.0 Motivations]]
 * [[Eureka 2.0 Architecture Overview]]
