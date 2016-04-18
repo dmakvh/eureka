@@ -3,13 +3,12 @@
 * [[Configuring Eureka]]
 * [[Building Eureka Client and Server]]
 * [[Running the Demo Application]]
-* [[Configuring Eureka in AWS Cloud]]
+* [[Deploying-Eureka-Servers-in-EC2]]
 * [[Understanding Eureka Client/Server Communication]]
 * [[Eureka REST operations]]
 * [[Understanding Eureka Peer to Peer communication]]
 * [[Overriding Default Configurations]]
 * [[FAQ]]
-* [[End-to-End Examples]]
 
 # Eureka 2.0 (work in progress)
 
