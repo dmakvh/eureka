@@ -12,6 +12,10 @@ The demo will help you set up a Eureka Server listening in a port of your choice
 
 The Application Service registers with the Eureka Server and the Application client can find and then send the request to the Application Service. The client and server exit gracefully after trading messages.
 
+# Note about the Demo Server
+
+The demo server is configured to be easy to set up for the demo use case, and is NOT configured for proper production usage. The server configurations to understand how to properly configure the eureka servers.
+
 # Eureka Server Configuration
 
 * Navigate to eureka-server/conf/ and edit the _eureka-client.properties_ and _eureka-client-test.properties_ if needed. (You do not have to edit the eureka-server.properties for the demo unless you are setting up advanced server configurations)
