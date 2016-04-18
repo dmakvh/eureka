@@ -12,7 +12,7 @@ In the case, where the server is not able get the registry information from the 
 
 Eureka servers communicate with one another using the same mechanism used between the Eureka client and the server as described [here](https://github.com/Netflix/eureka/wiki/Understanding-eureka-client-server-communication).
 
-Also worth noting is that there are several [configurations](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html) that can be tuned on the server including the communication between the servers if needed.
+Also worth noting is that there are several [configurations](https://github.com/Netflix/eureka/blob/master/eureka-core/src/main/java/com/netflix/eureka/EurekaServerConfig.java) that can be tuned on the server including the communication between the servers if needed.
 
 ## What happens during network outages between Peers?
 
