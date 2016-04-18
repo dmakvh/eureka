@@ -22,9 +22,9 @@ eureka.us-east-1.availabilityZones=us-east-1c,us-east-1d,us-east-1e
 Next, you configure is the service urls for each zone where Eureka is listening for requests. Multiple eureka servers for a zone can be configured by providing a comma-delimited list.
 <pre>
 <code>
-eureka.serviceUrl.us-east-1c=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
-eureka.serviceUrl.us-east-1d=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/
-eureka.serviceUrl.us-east-1e=http://ec2-50-179-285-592.compute-1.amazonaws.com:7001/discovery/v2/
+eureka.serviceUrl.us-east-1c=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/eureka/v2/,http://ec2-368-101-182-134.compute-1.amazonaws.com:7001/eureka/v2/
+eureka.serviceUrl.us-east-1d=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/eureka/v2/
+eureka.serviceUrl.us-east-1e=http://ec2-500-179-285-592.compute-1.amazonaws.com:7001/eureka/v2/
 </code>
 </pre>
 
@@ -49,11 +49,11 @@ Then, you can define TXT records recursively for each zone similar to the follow
 
 <pre>
 <code>
-txt.us-east-1c.mydomaintest.netflix.net="http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/" 
-"http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/"
-txt.us-east-1d.mydomaintest.netflix.net="http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/"
-txt.us-east-1e.mydomaintest.netflix.net="http://ec2-50-179-285-592.compute-1.amazonaws.com
-:7001/discovery/v2/"
+txt.us-east-1c.mydomaintest.netflix.net="http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/eureka/v2/" 
+"http://ec2-368-101-182-134.compute-1.amazonaws.com:7001/eureka/v2/"
+txt.us-east-1d.mydomaintest.netflix.net="http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/eureka/v2/"
+txt.us-east-1e.mydomaintest.netflix.net="http://ec2-500-179-285-592.compute-1.amazonaws.com
+:7001/eureka/v2/"
 </code>
 </pre>
 
@@ -72,7 +72,7 @@ At Netflix, we use this model to dynamically add/remove new Eureka server thus p
 
 ## Assigning EIPs using Service Urls
 
-So, why are we defining URLs when we are supposed to assign EIPs to servers? Any 2 instances which want to communicate with one another normally use a public hostname so that the AWS security groups honor the security restrictions. Eureka servers communicate with one another using these URLs and each URL contains a public hostname (_ec2-52-67-58-165.compute-1.amazonaws.com_)  which is derived from an Elastic IP (52.67.58.165). 
+So, why are we defining URLs when we are supposed to assign EIPs to servers? Any 2 instances which want to communicate with one another normally use a public hostname so that the AWS security groups honor the security restrictions. Eureka servers communicate with one another using these URLs and each URL contains a public hostname (_ec2-552-627-568-170.compute-1.amazonaws.com_)  which is derived from an Elastic IP (552.627.568.170). 
 
 Eureka server finds an EIP based on which zone it is launched. It then tries to find an unused EIP from that zone and then binds that EIP to itself during the startup.
 
@@ -87,13 +87,13 @@ When a list of eureka servers are provided for a client, eureka clients automati
 <pre>
 <code>
 eureka.us-east-1.availabilityZones=us-east-1c,us-east-1d,us-east-1e
-eureka.serviceUrl.us-east-1c=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/,http://ec2-168-101-182-134.compute-1.amazonaws.com:7001/discovery/v2/
-eureka.serviceUrl.us-east-1d=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/
-eureka.serviceUrl.us-east-1e=http://ec2-50-179-285-592.compute-1.amazonaws.com:7001/discovery/v2/
+eureka.serviceUrl.us-east-1c=http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/eureka/v2/,http://ec2-368-101-182-134.compute-1.amazonaws.com:7001/eureka/v2/
+eureka.serviceUrl.us-east-1d=http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/eureka/v2/
+eureka.serviceUrl.us-east-1e=http://ec2-500-179-285-592.compute-1.amazonaws.com:7001/eureka/v2/
 </code>
 </pre>
 
-We have defined 3 zones (us-east-1c, us-east-1d and us-east1e) and exactly one EIP per zone. Say, for example the eureka server running in us-east-1c at the location http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/discovery/v2/ fails, all eureka clients automatically communicate to the next server in the zone located at http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/discovery/v2/. If that fails, the clients try the next one in the list and so on.
+We have defined 3 zones (us-east-1c, us-east-1d and us-east1e) and exactly one EIP per zone. Say, for example the eureka server running in us-east-1c at the location http://ec2-552-627-568-165.compute-1.amazonaws.com:7001/eureka/v2/ fails, all eureka clients automatically communicate to the next server in the zone located at http://ec2-552-627-568-170.compute-1.amazonaws.com:7001/eureka/v2/. If that fails, the clients try the next one in the list and so on.
 
 When the failed server comes back up, the eureka clients automatically reconnect back to the server in its zone.
 
