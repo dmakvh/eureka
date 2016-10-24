@@ -1,3 +1,9 @@
+## Peer Configuration Overview
+Eureka servers needs to be configured such that each server know all other peers. See below for examples of how to do this for both the DNS method, and the property based method.
+
+In addition, eureka server replication can be batched to improve efficiency. To enable batched replication, set `eureka. shouldBatchReplication=true`. See DefaultEurekaServerConfig.java for more details.
+
+## AWS Configuration Overview
 In AWS Cloud, instances come and go. This means you cannot identify Eureka servers with a standard hostname or an IP Address. But, since Eureka Servers are the ones that help you identify other services with changing hostnames, you need a standard set of well identifiable addresses for Eureka Servers.
 
 That is where AWS EC2 Elastic IP addresses come in handy. [This](http://aws.amazon.com/articles/1346) is a must read if you have not heard about Elastic IP addresses before.
