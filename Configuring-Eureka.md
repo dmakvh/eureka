@@ -82,7 +82,7 @@ After configuring the Eureka Client, you may need to configure the Eureka Server
 When running eureka server for local development, there is typically a wait of ~3 minutes until it fulling boots up. This is due to the default server behaviour to search for peers to sync up and retries when it finds no available peers. This wait time can be reduced by setting the property `eureka.numberRegistrySyncRetries=0`.
 
 **Configuring for AWS**<br>
-Additional configurations are required if you are running in AWS as explained [here](https://github.com/Netflix/eureka/wiki/Configuring-Eureka-in-AWS-Cloud). For more advanced server configurations, refer to the options available [here](http://netflix.github.com/eureka/javadoc/eureka-core/com/netflix/eureka/EurekaServerConfig.html). 
+Additional configurations are required if you are running in AWS as explained [here](https://github.com/Netflix/eureka/wiki/Configuring-Eureka-in-AWS-Cloud). For more advanced server configurations, refer to the options available [here](https://github.com/Netflix/eureka/blob/master/eureka-core/src/main/java/com/netflix/eureka/EurekaServerConfig.java). 
 
 If you are [building](https://github.com/Netflix/eureka/wiki/Building-Eureka-Client-and-Server) the WAR archive, you can edit the files under _eureka-server/conf_ in place and the build takes care of placing the properties files under WEB-INF/classes before creating the archive.
 
