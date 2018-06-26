@@ -10,14 +10,6 @@
 * [[Overriding Default Configurations]]
 * [[FAQ]]
 
-# Eureka 2.0 (work in progress)
+# Eureka 2.0 (Discontinued)
 
-```
-WORK IN PROGRESS.
-Eureka 2.0 is still under active development, and there will be
-significant updates to its architecture/public API.
-```
-* [[Eureka 2.0 Motivations]]
-* [[Eureka 2.0 Architecture Overview]]
-* [[Eureka 2.0 Client Configuration And Use]]
-* [[Eureka 2.0 Server Configuration And Use]]
+The open source work on eureka 2.0 has been discontinued. The code base and artifacts that were released as part of the existing repository of work on the 2.x branch is considered use at your own risk.
