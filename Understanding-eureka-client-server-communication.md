@@ -102,4 +102,4 @@ All operations from Eureka client may take some time to reflect in the Eureka se
 
 ## Communication mechanism
 
-By default, Eureka clients use [Jersey](http://jersey.java.net/) and [XStream](http://xstream.codehaus.org/)  along with JSON payload to communicate with Eureka Server. You can always use a mechanism of your choice by [overriding](http://netflix.github.com/eureka/javadoc/eureka-client/index.html) the default one.
+By default, Eureka clients use [Jersey](http://jersey.java.net/) and Jackson along with JSON payload to communicate with Eureka Server. You can always use a mechanism of your choice by [overriding](http://netflix.github.com/eureka/javadoc/eureka-client/index.html) the default one. Note that [XStream](http://xstream.codehaus.org/) is also part of the dependency graph for some legacy use cases.
