@@ -9,7 +9,7 @@ When in self preservation mode, eureka servers will stop eviction of all instanc
 1. the number of heartbeat renewals it sees is back above the expected threshold, or
 2. self preservation is disabled (see below)
 
-Self preservation is enabled by default, and the threshold for enabling self preservation is > 15% of the current registry size.
+Self preservation is enabled by default, and the default threshold for enabling self preservation is > 15% of the current registry size.
 
 ## How to configure self preservation threshold
 The self preservation config is defined [here](https://github.com/Netflix/eureka/blob/master/eureka-core/src/main/java/com/netflix/eureka/DefaultEurekaServerConfig.java#L221). To change self preservation threshold in the example, set the property: `eureka.renewalPercentThreshold=[0.0, 1.0]`.
