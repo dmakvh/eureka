@@ -5,6 +5,7 @@
 * [[Running the Demo Application]]
 * [[Deploying-Eureka-Servers-in-EC2]]
 * [[Understanding Eureka Client/Server Communication]]
+* [[Server Self Preservation Mode]]
 * [[Eureka REST operations]]
 * [[Understanding Eureka Peer to Peer communication]]
 * [[Overriding Default Configurations]]
