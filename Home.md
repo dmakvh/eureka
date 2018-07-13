@@ -15,4 +15,4 @@
 
 The existing open source work on eureka 2.0 is discontinued. The code base and artifacts that were released as part of the existing repository of work on the 2.x branch is considered use at your own risk.
 
-Eureka 1.x is a core part of Netflix's service discovery system and is still an active project. Additionally, extension work on eureka 1.x has moved internally within Netflix.
+Eureka 1.x is a core part of Netflix's service discovery system and is still an active project.
