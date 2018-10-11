@@ -1,8 +1,14 @@
-```
-WORK IN PROGRESS.
-Eureka 2.0 is still under active development, and there might be 
-updates to its architecture/public API.
-```
+## **DISCONTINUED**
+
+The open source work on eureka 2.0 (as embodied by the 2.x branch) is discontinued. The rationale for this is variously due to dependencies on some parallel open source projects that never came to full fruition, and also the big bang nature of the project.
+
+The majority of the motivations for eureka 2.0 is something that we (Netflix) still believe in, and have since realized internally. This is done in a much more evolutionary and incremental way, via variously:
+  - a simple, auto-scalable REST readonly cluster with the same APIs to help with scale.
+  - a simple, auto-scalable gRPC readonly cluster leveraging gRPC to provide streaming capabilities and better multi-language client support.
+
+
+***
+
 
 # Why Eureka 2.0? 
 
