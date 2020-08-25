@@ -1,8 +1,8 @@
-##Prerequisites
+## Prerequisites
 
 * Git version 1.7.11.3 or higher
 
-##Build Steps
+## Build Steps
 
 * Install the latest [git](http://git-scm.com/book/en/Getting-Started-Installing-Git) package.
 
