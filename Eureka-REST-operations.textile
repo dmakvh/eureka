@@ -2,7 +2,7 @@ Following are the REST operations available for non-java applications to use Eur
 
 **appID** is the name of the application and **instanceID** is the unique id associated with the instance. In AWS cloud, instanceID is the **instance id** of the instance and in other data centers, it is the **hostname** of the instance.
 
-For JSON/XML, the content types supplied must be **application/xml** or **application/json**.
+For XML/JSON, the HTTP ACCEPT types as well as content-types supplied must contain **application/xml** or **application/json**, respectively.
 
 | *Operation* | *HTTP action* | *Description* |
 | Register new application instance | POST /eureka/v2/apps/**appID** | Input: JSON/XML payload HTTP Code: 204 on success |
